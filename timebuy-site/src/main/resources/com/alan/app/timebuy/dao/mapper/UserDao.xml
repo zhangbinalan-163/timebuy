@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.app.timebuy.dao.mapper.UserMapper">
+
+    <sql id="TABLE">d_timebuy_user</sql>
+
+    <resultMap id="DATA" type="com.alan.app.timebuy.entity.User">
+        <id property="userId" column="user_id" />
+        <result property="userName" column="user_name"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="phone" column="phone"/>
+        <result property="sex" column="sex"/>
+        <result property="birthDay" column="birth_day"/>
+        <result property="headIcon" column="head_icon"/>
+        <result property="profession" column="profession"/>
+        <result property="address" column="address"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="signature" column="signature"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.alan.app.timebuy.entity.User" useGeneratedKeys="true" keyColumn="id" keyProperty="userId">
+        INSERT INTO <include refid="TABLE"/>
+        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature)
+        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature})
+    </insert>
+
+    <update id="update" parameterType="com.alan.app.timebuy.entity.User">
+        update
+        <include refid="TABLE" />
+        <set>
+            <if test="userName != null">user_name=#{userName},</if>
+            <if test="nickName != null">nick_name=#{nickName},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="sex != null">sex=#{sex},</if>
+            <if test="birthDay != null">birth_day=#{birthDay},</if>
+            <if test="headIcon != null">head_icon=#{headIcon},</if>
+            <if test="profession != null">profession=#{profession},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="password != null">password=#{password},</if>
+            <if test="salt != null">salt=#{salt},</if>
+            <if test="creatTime != null">create_time=#{creatTime},</if>
+            <if test="updateTime != null">update_time=#{updateTime},</if>
+            <if test="signature != null">signature=#{signature}</if>
+        </set>
+        where user_id=#{userId}
+    </update>
+    <update id="updatePass" parameterType="com.alan.app.timebuy.entity.User">
+        update
+        <include refid="TABLE" />
+        <set>
+            <if test="password != null">password=#{password},</if>
+            <if test="salt != null">salt=#{salt}</if>
+        </set>
+        where user_id=#{userId}
+    </update>
+
+    <delete id="delete" parameterType="com.alan.app.timebuy.entity.User">
+        delete from
+        <include refid="TABLE" />
+        where user_id=#{userId}
+    </delete>
+
+    <select id="getByPhone"  parameterType="String" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where phone=#{phone}
+    </select>
+
+    <select id="getById"  parameterType="int" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_id=#{userId}
+    </select>
+</mapper>
