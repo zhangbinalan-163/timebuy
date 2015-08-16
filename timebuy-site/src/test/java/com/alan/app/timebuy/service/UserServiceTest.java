@@ -1,4 +1,4 @@
-package com.alan.app.timebuy.dao;
+package com.alan.app.timebuy.service;
 
 import com.alan.app.timebuy.common.util.StringUtils;
 import com.alan.app.timebuy.entity.User;
@@ -15,40 +15,24 @@ import javax.annotation.Resource;
 import static org.junit.Assert.fail;
 
 /**
- * 用户信息的操作DAO
- *
- * Created by zhangbinalan on 15/8/15.
+ * Created by zhangbinalan on 15/8/16.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:springContext-core.xml","classpath*:springContext-dao.xml"})
-public class UserDaoTest extends AbstractJUnit4SpringContextTests {
-    private static Logger logger= LoggerFactory.getLogger(UserDaoTest.class);
+public class UserServiceTest extends AbstractJUnit4SpringContextTests {
+    private static Logger logger= LoggerFactory.getLogger(UserServiceTest.class);
 
-    @Resource(name = "userDaoImpl")
-    private UserDao userDao;
+    @Resource(name = "userServiceImpl")
+    private UserService userService;
 
     @Test
     public void getByPhoneTest() {
         try {
-            User userInfo = userDao.getByPhone("18069812065");
+            User userInfo = userService.getUserByPhone("18069812065");
             logger.info(StringUtils.toJsonString(userInfo));
         } catch (Exception e) {
             logger.error("fail",e);
             fail();
         }
-    }
-    @Test
-    public void getByIdTest() {
-        try {
-            User userInfo = userDao.getById(9);
-            logger.info(StringUtils.toJsonString(userInfo));
-        } catch (Exception e) {
-            logger.error("fail",e);
-            fail();
-        }
-    }
-    @Test
-    public void insertTest() {
-
     }
 }

@@ -85,7 +85,7 @@
 		<property name="mapperLocations" value="classpath*:com/alan/app/timebuy/dao/mapper/*.xml" />
 		<property name="plugins">
 			<array>
-				<bean id="tableSegInterceptor" class="com.alan.app.timebuy.dao.mapper.StatisInterceptor"/>
+				<bean id="tableSegInterceptor" class="com.alan.app.timebuy.dao.mapper.SQLStatisticInterceptor"/>
 			</array>
 		</property>
 	</bean>
@@ -98,5 +98,9 @@
 	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
   	 	<property name="mapperInterface" value="com.alan.app.timebuy.dao.mapper.UserMapper" />
     	<property name="sqlSessionFactory" ref="sqlSessionFactory" /> 
+	</bean>
+	<bean id="sidMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.alan.app.timebuy.dao.mapper.SidMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 </beans>
