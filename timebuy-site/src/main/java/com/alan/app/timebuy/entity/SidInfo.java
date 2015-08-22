@@ -14,10 +14,11 @@ public class SidInfo {
     private Integer clientType;//客户端类型
     private String clientVersion;//客户端的版本号
     private String did;//设备号
-    private Integer status = STATUS_NORMAL;//状态
-    private Integer userId;//对应的登录用户ID
+    private Integer status;//状态
+    private Long userId;//对应的登录用户ID
     private Date loginTime;//登录的时间
     private Date expireTime;//登录过期时间
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -67,11 +68,11 @@ public class SidInfo {
         this.status = status;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -89,5 +90,13 @@ public class SidInfo {
 
     public void setExpireTime(Date expireTime) {
         this.expireTime = expireTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

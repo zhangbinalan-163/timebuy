@@ -1,6 +1,5 @@
 package com.alan.app.timebuy.web.controller;
 
-import com.alan.app.timebuy.common.util.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * 注册API测试
+ * DEV API测试
  * Created by zhangbinalan on 15/8/21.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,8 +27,8 @@ import org.springframework.web.context.WebApplicationContext;
         @ContextConfiguration(name = "parent",locations = {"classpath*:springContext-core.xml","classpath*:springContext-dao.xml"}),
         @ContextConfiguration(name = "child", locations = "classpath*:springContext-mvc.xml")
 })
-public class RegisterControllerTest {
-    private static Logger logger= LoggerFactory.getLogger(RegisterControllerTest.class);
+public class DevControllerTest {
+    private static Logger logger= LoggerFactory.getLogger(DevControllerTest.class);
 
     @Autowired
     private WebApplicationContext webApplicationContext;
@@ -42,26 +41,13 @@ public class RegisterControllerTest {
     }
 
     @Test
-    public void sendUserRegSmsTest() throws Exception {
+    public void sidTest() throws Exception {
 
-        MockHttpServletRequestBuilder request =
-                MockMvcRequestBuilders.get("/reg/sms")
-                        .param("phone", "18069812065")
-                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
-        MvcResult result = mockMvc.perform(request)
-                .andReturn();
-        String resultContent=result.getResponse().getContentAsString();
-        logger.info(resultContent);
-    }
-    @Test
-    public void sendUserRegTest() throws Exception {
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/dev/sid")
+                .param("did", "iloveliwendid")
+                .param("client_version", "1.0.1")
+                .param("client_type", "10");
 
-        MockHttpServletRequestBuilder request =
-                MockMvcRequestBuilders.get("/reg/user")
-                        .param("phone", "18069812065")
-                        .param("code", "123456")
-                        .param("password", StringUtils.md5("abcd1234"))
-                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();
         String resultContent=result.getResponse().getContentAsString();

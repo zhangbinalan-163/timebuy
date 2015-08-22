@@ -15,18 +15,23 @@
         <result property="clientVersion" column="client_version"/>
         <result property="createTime" column="create_time"/>
         <result property="expireTime" column="expire_time"/>
+        <result property="loginTime" column="login_time"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.SidInfo">
         INSERT INTO <include refid="TABLE"/>
-        (sid,client_type,client_version,did,status,user_id,login_time,expire_time)
-        VALUES(#{sid},#{clientType},#{clientVersion},#{did},#{status},#{userId},#{loginTime},#{expireTime})
+        (sid,client_type,client_version,did,status,user_id,login_time,expire_time,create_time)
+        VALUES(#{sid},#{clientType},#{clientVersion},#{did},#{status},#{userId},#{loginTime},#{expireTime},#{createTime})
     </insert>
 
     <update id="update" parameterType="com.alan.app.timebuy.entity.SidInfo">
         update
         <include refid="TABLE" />
-        set status=#{status},user_id=#{userId},login_time=#{loginTime},expire_time=#{expireTime}
+        <set>
+            <if test="status != null">status=#{status},</if>
+            <if test="userId != null">user_id=#{userId},</if>
+            login_time=#{loginTime},expire_time=#{expireTime}
+        </set>
         where id=#{id}
     </update>
 

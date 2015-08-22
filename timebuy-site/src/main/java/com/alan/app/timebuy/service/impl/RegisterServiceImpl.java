@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Calendar;
 
 /**
  * 注册业务实现类
@@ -37,6 +38,9 @@ public class RegisterServiceImpl implements RegisterService {
         String password = user.getPassword();//调用者确保已经md5过了
         password = StringUtils.md5(salt + "#" + password);
         user.setPassword(password);
+        Calendar calendar=Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        user.setCreateTime(calendar.getTime());
         //插入数据
         userService.addUser(user);
         logger.info("register user success,phone={}", user.getPhone());

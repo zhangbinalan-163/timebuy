@@ -1,5 +1,7 @@
 package com.alan.app.timebuy.entity;
 
+import com.alan.app.timebuy.common.exception.TimeBuyException;
+
 /**
  * 客户端类型枚举
  * Created by zhangbinalan on 15/8/16.
@@ -18,13 +20,13 @@ public enum ClientType {
         return this.id;
     }
 
-    public static ClientType getInstance(int id) {
+    public static ClientType getInstance(int id) throws TimeBuyException {
         if (id == 10) {
             return IPHONE_APP;
         }
         if (id == 20) {
             return ANDROID_APP;
         }
-        return null;
+        throw new TimeBuyException("没有对应客户端信息");
     }
 }

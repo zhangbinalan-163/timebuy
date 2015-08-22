@@ -27,4 +27,18 @@ public class CacheKeyUtils {
             return userId+"@userid@userinfo@timebuy";
         }
     }
+    /**
+     * SID信息CACHE相关
+     */
+    public static class SIDCache{
+        /**
+         * SID的换成的key
+         * @param sid
+         * @return
+         */
+        public static String getKeyBySid(String sid){
+            return sid+"@sidInfo@timebuy";
+
+        }
+    }
 }
