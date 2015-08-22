@@ -33,7 +33,7 @@ public class RegisterServiceTest extends AbstractJUnit4SpringContextTests {
     public void registerUserTest() {
         try {
             User user=new User();
-            user.setPhone("18069812065");
+            user.setPhone("18069812067");
             user.setPassword(StringUtils.md5("123456"));
             registerService.registerUser(user);
         } catch (TimeBuyException e) {

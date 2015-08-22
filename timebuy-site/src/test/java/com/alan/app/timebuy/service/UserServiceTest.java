@@ -28,7 +28,7 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
     @Test
     public void getByPhoneTest() {
         try {
-            User userInfo = userService.getUserByPhone("18069812065");
+            User userInfo = userService.getUserByPhone("18069812067");
             logger.info(StringUtils.toJsonString(userInfo));
         } catch (Exception e) {
             logger.error("fail",e);

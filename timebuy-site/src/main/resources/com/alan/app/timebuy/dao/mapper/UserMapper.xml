@@ -21,12 +21,14 @@
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
         <result property="signature" column="signature"/>
+        <result property="source" column="source"/>
+        <result property="status" column="status"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.User" useGeneratedKeys="true" keyColumn="id" keyProperty="userId">
         INSERT INTO <include refid="TABLE"/>
-        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature)
-        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature})
+        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status)
+        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status})
     </insert>
 
     <update id="update" parameterType="com.alan.app.timebuy.entity.User">
@@ -45,7 +47,9 @@
             <if test="salt != null">salt=#{salt},</if>
             <if test="creatTime != null">create_time=#{creatTime},</if>
             <if test="updateTime != null">update_time=#{updateTime},</if>
-            <if test="signature != null">signature=#{signature}</if>
+            <if test="signature != null">signature=#{signature},</if>
+            <if test="source != null">source=#{source},</if>
+            <if test="status != null">status=#{status}</if>
         </set>
         where user_id=#{userId}
     </update>

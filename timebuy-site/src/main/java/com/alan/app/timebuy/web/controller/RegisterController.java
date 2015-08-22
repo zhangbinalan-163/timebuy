@@ -3,6 +3,8 @@ package com.alan.app.timebuy.web.controller;
 import com.alan.app.timebuy.common.exception.InvalidParamException;
 import com.alan.app.timebuy.common.exception.TimeBuyException;
 import com.alan.app.timebuy.common.util.StringUtils;
+import com.alan.app.timebuy.entity.User;
+import com.alan.app.timebuy.service.RegisterService;
 import com.alan.app.timebuy.web.Constants;
 import com.alan.app.timebuy.web.vo.Request;
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -21,6 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping({"/reg"})
 public class RegisterController extends BaseController{
     private static Logger logger = LoggerFactory.getLogger(RegisterController.class);
+    @Resource(name = "registerServiceImpl")
+    private RegisterService registerService;
 
     /**
      * 用户注册请求响应方法
@@ -35,7 +40,19 @@ public class RegisterController extends BaseController{
         //获取相关业务参数
         String phone = request.getString("phone");
         String code = request.getString("code");
-        String password = request.getString("password");
+        String password = request.getString("password");//MD5之后
+        //检查参数
+        if(!StringUtils.isLegalMobile(phone)){
+            throw new InvalidParamException("该手机号不支持");
+        }
+        //TODO 密码长度检查
+        //检查验证码
+        registerService.checkUserRegSms(phone,code);
+        //执行注册
+        User userInfo=new User();
+        userInfo.setPassword(password);
+        userInfo.setPhone(phone);
+        registerService.registerUser(userInfo);
 
         return createSuccessResponse(null);
     }
@@ -57,6 +74,7 @@ public class RegisterController extends BaseController{
             throw new InvalidParamException("该手机号不支持");
         }
         //执行业务
+        registerService.sendUserRegSms(phone);
         //生成响应信息
         return createSuccessResponse(null);
     }

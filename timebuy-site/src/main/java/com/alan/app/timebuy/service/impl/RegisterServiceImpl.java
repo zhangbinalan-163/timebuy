@@ -34,12 +34,12 @@ public class RegisterServiceImpl implements RegisterService {
         //加密密码
         int salt = genSalt();
         user.setSalt(salt);
-        String password = user.getPassword();//已经md5过了
+        String password = user.getPassword();//调用者确保已经md5过了
         password = StringUtils.md5(salt + "#" + password);
         user.setPassword(password);
         //插入数据
-        this.userService.addUser(user);
-        logger.info("register user success,phone={}", user.getPassword());
+        userService.addUser(user);
+        logger.info("register user success,phone={}", user.getPhone());
     }
     //生成密码盐
     private int genSalt() {
