@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  * Created by zhangbinalan on 15/8/15.
  */
 @Controller
-@RequestMapping({"/reg"})
+@RequestMapping(value = "/reg")
 public class RegisterController extends BaseController{
 
     @Resource(name = "registerServiceImpl")

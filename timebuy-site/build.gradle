@@ -20,5 +20,5 @@ dependencies {
     testCompile ('org.springframework:spring-test:4.2.0.RELEASE')
     testCompile ('junit:junit:4.12')
 
-    providedRuntime('javax.servlet:javax.servlet-api:3.1.0')
+    compile('javax.servlet:javax.servlet-api:3.1.0')
 }
