@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.app.timebuy.dao.mapper.SidMapper">
+    <sql id="TABLE">d_timebuy_sid</sql>
+
+    <resultMap id="DATA" type="com.alan.app.timebuy.entity.SidInfo">
+        <id property="id" column="id" />
+        <result property="sid" column="sid"/>
+        <result property="did" column="did"/>
+        <result property="status" column="status"/>
+        <result property="userId" column="user_id"/>
+        <result property="clientType" column="client_type"/>
+        <result property="clientVersion" column="client_version"/>
+        <result property="createTime" column="create_time"/>
+        <result property="expireTime" column="expire_time"/>
+        <result property="loginTime" column="login_time"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.alan.app.timebuy.entity.SidInfo">
+        INSERT INTO <include refid="TABLE"/>
+        (sid,client_type,client_version,did,status,user_id,login_time,expire_time,create_time)
+        VALUES(#{sid},#{clientType},#{clientVersion},#{did},#{status},#{userId},#{loginTime},#{expireTime},#{createTime})
+    </insert>
+
+    <update id="update" parameterType="com.alan.app.timebuy.entity.SidInfo">
+        update
+        <include refid="TABLE" />
+        <set>
+            <if test="status != null">status=#{status},</if>
+            <if test="userId != null">user_id=#{userId},</if>
+            login_time=#{loginTime},expire_time=#{expireTime}
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="com.alan.app.timebuy.entity.SidInfo">
+        delete from
+        <include refid="TABLE" />
+        where id=#{id}
+    </delete>
+
+    <select id="getBySid"  parameterType="String" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where sid=#{sid}
+    </select>
+</mapper>

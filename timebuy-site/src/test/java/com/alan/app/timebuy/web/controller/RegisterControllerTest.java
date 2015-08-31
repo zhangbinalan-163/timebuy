@@ -46,7 +46,7 @@ public class RegisterControllerTest {
 
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/reg/sms")
-                        .param("phone", "18069812065")
+                        .param("phone", "18069812077")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();
@@ -58,9 +58,56 @@ public class RegisterControllerTest {
 
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/reg/user")
-                        .param("phone", "18069812065")
+                        .param("phone", "18069812079")
                         .param("code", "123456")
                         .param("password", StringUtils.md5("abcd1234"))
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void sendLoginUserTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/login/user")
+                        .param("phone", "18767122229")
+                        .param("password", StringUtils.md5("123456"))
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void sendUserUpdateTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/user/update")
+                        .param("phone", "18069812068")
+                        .param("nickName", "小小")
+                        .param("userId", "16")
+                        .param("signature", "18069812068")
+                        .param("profession", "18069812068")
+                        .param("sex", "0")
+                        .param("birthDay", "2011-12-1")
+                        .param("headIcon", "11111111111111111111")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void sendUserInfoTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/user/info")
+                        .param("phone", "18069812068")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();

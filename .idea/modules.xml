@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/timebuy.iml" filepath="$PROJECT_DIR$/timebuy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timebuy-site/timebuy-site.iml" filepath="$PROJECT_DIR$/timebuy-site/timebuy-site.iml" />
+    </modules>
+  </component>
+</project>

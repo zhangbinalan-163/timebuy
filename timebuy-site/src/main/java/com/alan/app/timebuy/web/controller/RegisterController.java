@@ -6,6 +6,7 @@ import com.alan.app.timebuy.common.util.StringUtils;
 import com.alan.app.timebuy.entity.User;
 import com.alan.app.timebuy.service.RegisterService;
 import com.alan.app.timebuy.service.SidService;
+import com.alan.app.timebuy.service.UserService;
 import com.alan.app.timebuy.web.Constants;
 import com.alan.app.timebuy.web.vo.Request;
 import org.slf4j.Logger;
@@ -31,6 +32,9 @@ public class RegisterController extends BaseController{
     @Resource(name="sidServiceImpl")
     private SidService sidService;
 
+    @Resource(name = "userServiceImpl")
+    private UserService userService;
+
     /**
      * 用户注册请求响应方法
      * @param httpRequest
@@ -45,6 +49,9 @@ public class RegisterController extends BaseController{
         String phone = request.getString("phone");
         String code = request.getString("code");
         String password = request.getString("password");//MD5之后
+        /*if(userService.getUserByPhone(phone).getUserId() != null){
+            return  createFailResponse(2002,null);
+        }*/
         //检查参数
         if(!StringUtils.isLegalMobile(phone)){
             //手机号格式检查
@@ -63,8 +70,7 @@ public class RegisterController extends BaseController{
         registerService.registerUser(userInfo);
         //注册后登录
         String sid=request.getSid();
-        sidService.bindLoginUser(sid,userInfo);
-
+        sidService.bindLoginUser(sid, userInfo);
         return createSuccessResponse(null);
     }
 

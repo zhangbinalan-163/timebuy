@@ -4,6 +4,8 @@ import com.alan.app.timebuy.common.exception.TimeBuyException;
 import com.alan.app.timebuy.entity.User;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 用户信息的操作DAO
@@ -32,4 +34,19 @@ public interface UserDao {
      * @throws SQLException
      */
     void insert(User user) throws TimeBuyException;
+
+    /**
+     * 修改信息
+     * @param user
+     * @return
+     * @throws SQLException
+     */
+    void update(User user) throws TimeBuyException;
+
+    /**
+     * 获取所有用户参数
+     * @return
+     * @throws SQLException
+     */
+    List<Map<String,Object>> getAll() throws Exception;
 }

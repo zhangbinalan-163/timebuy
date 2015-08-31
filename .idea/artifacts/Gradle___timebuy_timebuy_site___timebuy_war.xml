@@ -1,0 +1,44 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : timebuy:timebuy-site : timebuy.war">
+    <output-path>$PROJECT_DIR$/build/classes/artifacts/timebuy-site</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/timebuy-site" />
+    </properties>
+    <root id="archive" name="timebuy.war">
+      <element id="javaee-facet-resources" facet="timebuy-site/web/Web Gradle : timebuy.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="timebuy-site" />
+          <element id="dir-copy" path="$PROJECT_DIR$/timebuy-site/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.alibaba:fastjson:1.2.6" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.1.3" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.1.3" />
+          <element id="library" level="project" name="Gradle: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.36" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis-spring:1.2.3" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis:3.3.0" />
+          <element id="library" level="project" name="Gradle: com.googlecode.xmemcached:xmemcached:2.0.0" />
+          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.7" />
+          <element id="library" level="project" name="Gradle: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/classes/artifacts/timebuy-site/exploded/timebuy.war/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

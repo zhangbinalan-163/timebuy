@@ -3,6 +3,8 @@ package com.alan.app.timebuy.dao.mapper;
 import com.alan.app.timebuy.entity.User;
 
 import java.sql.SQLException;
+import java.util.Map;
+import java.util.List;
 
 /**
  * user信息的mapper
@@ -31,4 +33,20 @@ public interface UserMapper {
      * @throws SQLException
      */
     void insert(User user) throws Exception;
+
+    /**
+     * 修改信息
+     * @param user
+     * @return
+     * @throws SQLException
+     */
+    void update(User user) throws Exception;
+
+    /**
+     * 获取所有用户参数
+     * @return
+     * @throws SQLException
+     */
+    List<Map<String,Object>> getAll() throws Exception;
+
 }

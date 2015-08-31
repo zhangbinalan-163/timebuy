@@ -7,6 +7,9 @@ import com.alan.app.timebuy.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 
 /**
  * UserDao的具体实现
@@ -44,4 +47,23 @@ public class UserDaoImpl implements UserDao{
             throw new TimeBuyException("插入用户数据异常",e);
         }
     }
+
+    @Override
+    public void update(User user) throws TimeBuyException {
+        try{
+          userMapper.update(user);
+        }catch (Exception e) {
+            throw new TimeBuyException("修改用户信息异常",e);
+        }
+    }
+
+    @Override
+    public List<Map<String,Object>> getAll() throws TimeBuyException{
+        try{
+            return userMapper.getAll();
+        }catch (Exception e){
+           throw new TimeBuyException("查询所有用户信息异常",e);
+        }
+    }
+
 }

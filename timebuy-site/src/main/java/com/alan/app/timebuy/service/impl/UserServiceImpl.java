@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 用户业务类实现
@@ -101,4 +103,15 @@ public class UserServiceImpl implements UserService{
     public void addUser(User user) throws TimeBuyException {
         userDao.insert(user);
     }
+
+    @Override
+    public void updateUser(User user) throws TimeBuyException {
+        userDao.update(user);
+    }
+
+     @Override
+    public List<Map<String,Object>> getAllUser() throws TimeBuyException {
+       return  userDao.getAll();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.alan.app.timebuy.service;
 
+import com.alan.app.timebuy.common.util.DateUtils;
 import com.alan.app.timebuy.common.util.StringUtils;
 import com.alan.app.timebuy.entity.User;
 import org.junit.Test;
@@ -29,6 +30,21 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
     public void getByPhoneTest() {
         try {
             User userInfo = userService.getUserByPhone("18069812067");
+            logger.info(StringUtils.toJsonString(userInfo));
+        } catch (Exception e) {
+            logger.error("fail",e);
+            fail();
+        }
+    }
+
+    @Test
+    public void updateTest() {
+        try {
+            User userInfo = new User();
+            userInfo.setNickName("11111111111111111111");
+            userInfo.setUserId(Long.parseLong("27"));
+            userInfo.setBirthDay(DateUtils.StringToDate("2001-12-8"));
+            userService.updateUser(userInfo);
             logger.info(StringUtils.toJsonString(userInfo));
         } catch (Exception e) {
             logger.error("fail",e);
