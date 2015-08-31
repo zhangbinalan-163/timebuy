@@ -96,8 +96,8 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73099416">
-              <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.7758285">
+              <caret line="114" column="5" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -1669,12 +1669,12 @@
       <workItem from="1440846036903" duration="12530000" />
       <workItem from="1440907328429" duration="15909000" />
       <workItem from="1440939510033" duration="2689000" />
-      <workItem from="1441015907867" duration="10411000" />
+      <workItem from="1441015907867" duration="11255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79626000" />
+    <option name="totallyTimeSpent" value="80470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -2142,8 +2142,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73099416">
-          <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.7758285">
+          <caret line="114" column="5" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
           <folding />
         </state>
       </provider>

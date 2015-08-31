@@ -109,7 +109,7 @@ public class UserServiceImpl implements UserService{
         userDao.update(user);
     }
 
-     @Override
+    @Override
     public List<Map<String,Object>> getAllUser() throws TimeBuyException {
        return  userDao.getAll();
     }
