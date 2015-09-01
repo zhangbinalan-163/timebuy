@@ -48,5 +48,5 @@ public interface UserService {
      * @return
      * @throws SQLException
      */
-//    List<Map<String,Object>> getAllUser() throws Exception;
+    List<User> getAllUser() throws Exception;
 }

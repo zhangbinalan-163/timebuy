@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
- * ÓÃ»§ĞÅÏ¢µÄ²éÑ¯ºÍĞŞ¸Ä¿ØÖÆÆ÷
+ * ç”¨æˆ·ä¿¡æ¯çš„æŸ¥è¯¢å’Œä¿®æ”¹æ§åˆ¶å™¨
  * Created by wyk on 15/8/15.
  */
 @Controller
@@ -25,7 +25,7 @@ public class UserInfoController extends BaseController{
     @Resource(name = "userServiceImpl")
     private UserService userService;
     /**
-     * ÓÃ»§ĞÅÏ¢ÇëÇóÏìÓ¦·½·¨
+     * ç”¨æˆ·ä¿¡æ¯è¯·æ±‚å“åº”æ–¹æ³•
      * @param httpRequest
      * @return
      * @throws Exception
@@ -34,14 +34,14 @@ public class UserInfoController extends BaseController{
     @ResponseBody
     public String userInfo(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
-        //»ñÈ¡Ïà¹ØÒµÎñ²ÎÊı
+        //è·å–ç›¸å…³ä¸šåŠ¡å‚æ•°
         String phone = request.getString("phone");
-        //¼ì²é²ÎÊı
+        //æ£€æŸ¥å‚æ•°
         if(!StringUtils.isLegalMobile(phone)){
-            //ÊÖ»úºÅ¸ñÊ½¼ì²é
-            throw new InvalidParamException("¸ÃÊÖ»úºÅ²»Ö§³Ö");
+            //æ‰‹æœºå·æ ¼å¼æ£€æŸ¥
+            throw new InvalidParamException("è¯¥æ‰‹æœºå·ä¸æ”¯æŒ");
         }
-        //Ö´ĞĞ»ñÈ¡×ÊÁÏ
+        //æ‰§è¡Œè·å–èµ„æ–™
         User user= userService.getUserByPhone(phone);
         if(userService.getUserByPhone(phone) == null || userService.getUserByPhone(phone).equals("")){
             return createFailResponse(2004, null);
@@ -51,7 +51,7 @@ public class UserInfoController extends BaseController{
     }
 
     /**
-     * ÓÃ»§ĞÅÏ¢ĞŞ¸ÄÏìÓ¦·½·¨
+     * ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹å“åº”æ–¹æ³•
      * @param httpRequest
      * @return
      * @throws Exception
@@ -60,7 +60,7 @@ public class UserInfoController extends BaseController{
     @ResponseBody
     public String userUpdate(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
-        //»ñÈ¡Ïà¹ØÒµÎñ²ÎÊı
+        //è·å–ç›¸å…³ä¸šåŠ¡å‚æ•°
         int userId = Integer.parseInt(request.getString("userId"));
         String nickName = request.getString("nickName");
         String headIcon = request.getString("headIcon");
@@ -69,7 +69,7 @@ public class UserInfoController extends BaseController{
         String profession = request.getString("profession");
         String signature = request.getString("signature");
         String phone = request.getString("phone");
-        //È¡µÃ·µ»Ø¶ÔÏó
+        //å–å¾—è¿”å›å¯¹è±¡
         User user = userService.getUserById(userId);
         if(request.getString("userId") != null){
             user.setNickName(nickName);

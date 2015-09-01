@@ -109,9 +109,9 @@ public class UserServiceImpl implements UserService{
         userDao.update(user);
     }
 
-/*    @Override
-    public List<Map<String,Object>> getAllUser() throws TimeBuyException {
-       return  userDao.getAll();
-    }*/
+    @Override
+    public List<User> getAllUser() throws Exception {
+       return userDao.getAll();
+    }
 
 }

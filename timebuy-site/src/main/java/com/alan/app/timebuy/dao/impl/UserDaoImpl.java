@@ -58,7 +58,7 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public List<Map<String,Object>> getAll() throws TimeBuyException{
+    public List<User> getAll() throws TimeBuyException{
         try{
             return userMapper.getAll();
         }catch (Exception e){

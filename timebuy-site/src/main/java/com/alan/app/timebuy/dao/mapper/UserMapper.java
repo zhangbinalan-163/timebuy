@@ -47,6 +47,6 @@ public interface UserMapper {
      * @return
      * @throws SQLException
      */
-    List<Map<String,Object>> getAll() throws Exception;
+    List<User> getAll() throws Exception;
 
 }

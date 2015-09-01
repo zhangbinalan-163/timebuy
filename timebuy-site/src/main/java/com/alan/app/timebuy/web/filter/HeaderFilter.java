@@ -30,7 +30,7 @@ public class HeaderFilter extends HandlerInterceptorAdapter
         requestVO.setHttpRequest(request);
         String sid = WebUtils.getHeader(request, Constants.HEADER_NAME_SID);
         //SID不能为空
-        if (StringUtils.isEmpty(sid)) {
+      if (StringUtils.isEmpty(sid)) {
             logger.warn("x-timebuy-sid is null");
             Response responseVO = new Response();
             responseVO.setSuccess(false);

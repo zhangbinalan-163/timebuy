@@ -80,9 +80,10 @@
         where user_id=#{userId}
     </select>
 
-    <select id="getAll" resultType="java.util.HashMap">
+    <select id="getAll" resultMap="DATA">
          select * from
          <include refid="TABLE" />
+        order by #{userId}
     </select>
 
 

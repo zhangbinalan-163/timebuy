@@ -2,6 +2,7 @@ package com.alan.app.timebuy.web.controller;
 
 import com.alan.app.timebuy.common.exception.InvalidParamException;
 import com.alan.app.timebuy.common.exception.TimeBuyException;
+import com.alan.app.timebuy.common.exception.UserExsistException;
 import com.alan.app.timebuy.common.util.StringUtils;
 import com.alan.app.timebuy.entity.User;
 import com.alan.app.timebuy.service.RegisterService;
@@ -49,6 +50,13 @@ public class RegisterController extends BaseController{
         String phone = request.getString("phone");
         String code = request.getString("code");
         String password = request.getString("password");//MD5之后
+
+        //检查该用户是否已经存在
+        User oldUser = userService.getUserByPhone(phone);
+        if(oldUser!=null){
+           return createFailResponse(2002,null);
+        }
+
         /*if(userService.getUserByPhone(phone).getUserId() != null){
             return  createFailResponse(2002,null);
         }*/
