@@ -9,7 +9,10 @@ import com.alan.app.timebuy.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import java.io.File;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -60,10 +63,26 @@ public class UserInfoController extends BaseController{
     @ResponseBody
     public String userUpdate(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
+        //头像上传
+        MultipartHttpServletRequest multipartRequest  =  (MultipartHttpServletRequest) request;
+        MultipartFile file  =  multipartRequest.getFile("headIcon");
+        String fileName = file.getOriginalFilename();
+        String path="upload"+File.separator+fileName;
+        File targetFile = new File(path);
+        if(!targetFile.exists()){
+            targetFile.mkdirs();
+        }
+        //保存
+        try {
+            file.transferTo(targetFile);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         //获取相关业务参数
         int userId = Integer.parseInt(request.getString("userId"));
         String nickName = request.getString("nickName");
-        String headIcon = request.getString("headIcon");
+        String headIcon = fileName;
         int sex  = Integer.parseInt(request.getString("sex"));
         Date birthDay = DateUtils.StringToDate(request.getString("birthDay"));
         String profession = request.getString("profession");

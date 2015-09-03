@@ -3,7 +3,9 @@ package com.alan.app.timebuy.service;
 import com.alan.app.timebuy.common.exception.TimeBuyException;
 import com.alan.app.timebuy.common.exception.UserExsistException;
 import com.alan.app.timebuy.common.util.StringUtils;
+import com.alan.app.timebuy.entity.News;
 import com.alan.app.timebuy.entity.User;
+import com.alan.app.timebuy.service.impl.NewsServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,6 +30,20 @@ public class RegisterServiceTest extends AbstractJUnit4SpringContextTests {
 
     @Resource(name = "registerServiceImpl")
     private RegisterService registerService;
+
+    @Resource(name = "newsServiceImpl")
+    private NewsService newsService;
+
+    @Test
+    public void addNews(){
+        try{
+            News news = new News();
+            news.setNews("112");
+            newsService.addNews(news);
+        }catch (TimeBuyException e){
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void registerUserTest() {

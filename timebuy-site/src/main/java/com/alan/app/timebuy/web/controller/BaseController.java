@@ -41,7 +41,7 @@ public class BaseController {
      * @return
      */
     protected String createSuccessResponse(Object data) {
-        return createSuccessResponse("success", data);
+        return createSuccessResponse("成功！！", data);
     }
 
     /**

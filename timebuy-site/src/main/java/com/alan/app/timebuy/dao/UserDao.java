@@ -49,4 +49,5 @@ public interface UserDao {
      * @throws SQLException
      */
     List<User> getAll() throws Exception;
+
 }

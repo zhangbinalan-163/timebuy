@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.app.timebuy.dao.mapper.NewsMapper">
+
+    <sql id="TABLE">d_timebuy_news</sql>
+
+    <resultMap id="DATA" type="com.alan.app.timebuy.entity.News">
+        <id property="newsId" column="news_id"/>
+        <result property="news" column="news"/>
+        <result property="starttime" column="starttime"/>
+        <result property="finishtime" column="finishtime"/>
+        <result property="phone" column="phone"/>
+        <result property="label" column="label"/>
+        <result property="money" column="money"/>
+        <result property="coordname" column="coordname"/>
+        <result property="coordx" column="coordx"/>
+        <result property="coordy" column="coordy"/>
+        <result property="pic" column="pic"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.alan.app.timebuy.entity.News" useGeneratedKeys="true" keyColumn="id" keyProperty="newsId">
+        INSERT INTO <include refid="TABLE"/>
+        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid)
+        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid})
+    </insert>
+
+</mapper>

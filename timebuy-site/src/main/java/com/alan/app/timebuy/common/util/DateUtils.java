@@ -13,12 +13,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 日期格式工具类
+ * ????????????
  * Created by wyk on 15/8/29.
  */
 public class DateUtils {
     /**
-     * 将Date转换为String
+     * ??Date????String
      * @param date
      * @return
      */
@@ -29,7 +29,7 @@ public class DateUtils {
     }
 
     /**
-     * 将String转换为Date
+     * ??String????Date
      * @param dateStr
      * @return
      */
@@ -43,6 +43,26 @@ public class DateUtils {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return sqlDate;
+    }
+
+    /**
+     * String?转换成Date精确到分
+     * @param dateStr
+     * @return
+     */
+    public static Date StringToDate2(String dateStr){
+        DateFormat dd=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date=null;
+        java.sql.Date sqlDate=null ;
+        try {
+            date = (Date)dd.parse(dateStr);
+            sqlDate = new java.sql.Date(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
         return sqlDate;
     }
 

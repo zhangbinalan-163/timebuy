@@ -58,7 +58,7 @@ public class RegisterControllerTest {
 
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/reg/user")
-                        .param("phone", "18767122229")
+                        .param("phone", "18767122228")
                         .param("code", "123456")
                         .param("password", StringUtils.md5("abcd1234"))
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
@@ -74,7 +74,7 @@ public class RegisterControllerTest {
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/login/user")
                         .param("phone", "18767122229")
-                        .param("password", StringUtils.md5("123456"))
+                        .param("password", StringUtils.md5("abcd1234"))
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();
@@ -87,9 +87,9 @@ public class RegisterControllerTest {
 
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/user/update")
-                        .param("phone", "18069812068")
+                        .param("phone", "18767122228")
                         .param("nickName", "小大111")
-                        .param("userId", "16")
+                        .param("userId", "29")
                         .param("signature", "18069812068")
                         .param("profession", "18069812068")
                         .param("sex", "0")
