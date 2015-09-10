@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  * 控制器基类
  * Created by zhangbinalan on 15/8/15.
  */
-public class BaseController {
+public class BaseController{
     private static Logger logger = LoggerFactory.getLogger(BaseController.class);
     /**
      * 生成JSON响应信息

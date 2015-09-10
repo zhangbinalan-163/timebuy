@@ -8,6 +8,7 @@ import com.alan.app.timebuy.common.util.DateUtils;
 import com.alan.app.timebuy.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import java.io.File;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
@@ -59,28 +61,36 @@ public class UserInfoController extends BaseController{
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/update")
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ResponseBody
     public String userUpdate(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
         //头像上传
-        MultipartHttpServletRequest multipartRequest  =  (MultipartHttpServletRequest) request;
+        int userId = Integer.parseInt(request.getString("userId"));
+        User user1 = userService.getUserById(userId);
+        MultipartHttpServletRequest multipartRequest  =  (MultipartHttpServletRequest) httpRequest;
         MultipartFile file  =  multipartRequest.getFile("headIcon");
         String fileName = file.getOriginalFilename();
-        String path="upload"+File.separator+fileName;
-        File targetFile = new File(path);
-        if(!targetFile.exists()){
-            targetFile.mkdirs();
-        }
-        //保存
-        try {
-            file.transferTo(targetFile);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(file.isEmpty()){
+            fileName = user1.getHeadIcon();
+        }else{
+            String path = httpRequest.getSession().getServletContext().getRealPath("/")+"upload"+File.separator+fileName;
+            System.out.print("===================================================");
+            System.out.print(path);
+            System.out.print("===================================================");
+            File targetFile = new File(path);
+            if(!targetFile.exists()){
+                targetFile.mkdirs();
+            }
+            //保存
+            try {
+                file.transferTo(targetFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         //获取相关业务参数
-        int userId = Integer.parseInt(request.getString("userId"));
         String nickName = request.getString("nickName");
         String headIcon = fileName;
         int sex  = Integer.parseInt(request.getString("sex"));
@@ -104,5 +114,4 @@ public class UserInfoController extends BaseController{
             return createFailResponse(2005,null);
         }
 }
-
 }

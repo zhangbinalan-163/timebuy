@@ -14,7 +14,7 @@ public class News{
 	private String coordname;//坐标名称
 	private Float coordx;//坐标x
 	private Float coordy;//坐标y
-	private String pic;//图片路径
+	private String pic;//图片名称
 	private int userid;//用户主键
 
 	public int getUserid() {

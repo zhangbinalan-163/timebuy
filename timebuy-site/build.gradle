@@ -15,10 +15,14 @@ dependencies {
     compile ('org.springframework:spring-jdbc:4.2.0.RELEASE')
     compile ('org.mybatis:mybatis:3.3.0')
 
+    compile('com.springsource.org.apache.commons.fileupload:1.2.0')
+    compile('com.springsource.org.apache.commons.io:1.4.0')
+
     compile ('com.googlecode.xmemcached:xmemcached:2.0.0')
 
     testCompile ('org.springframework:spring-test:4.2.0.RELEASE')
     testCompile ('junit:junit:4.12')
 
     compile('javax.servlet:javax.servlet-api:3.1.0')
+
 }

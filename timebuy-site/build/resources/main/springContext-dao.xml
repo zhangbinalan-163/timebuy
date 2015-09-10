@@ -107,4 +107,5 @@
 		<property name="mapperInterface" value="com.alan.app.timebuy.dao.mapper.NewsMapper"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
+
 </beans>
