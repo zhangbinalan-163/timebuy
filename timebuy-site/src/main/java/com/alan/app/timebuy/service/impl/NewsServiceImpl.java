@@ -34,4 +34,32 @@ public class NewsServiceImpl implements NewsService{
        newsDao.insert(news);
     }
 
+    /**
+     * 根据指定Id查找News
+     * @param userId
+     * @return List<User>
+     * @throws TimeBuyException
+     */
+    public List<News> getNewsById(int userId) throws TimeBuyException{
+        return newsDao.getNewsById(userId);
+    }
+
+    /**
+     * 获取指定所有News
+     * @return List<News>
+     * @throws TimeBuyException
+     */
+    public List<News> getNewsAll() throws  TimeBuyException{
+       return newsDao.getNewsAll();
+    }
+
+    /**
+     * 根据newsId获取一条news
+     * @param  newsId
+     * @throws TimeBuyException
+     */
+    public News selectNewsById(int newsId) throws TimeBuyException{
+        return newsDao.selectNewsById(newsId);
+    }
+
 }

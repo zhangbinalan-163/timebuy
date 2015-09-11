@@ -27,4 +27,22 @@
         VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid})
     </insert>
 
+    <select id="getNewsById" parameterType="int" resultMap="DATA">
+         SELECT * FROM
+         <include refid="TABLE" />
+        WHERE userid = #{userid}
+    </select>
+
+    <select id="getNewsAll" resultMap="DATA">
+        SELECT * FROM
+        <include refid="TABLE"/>
+        ORDER BY #{newsId}
+    </select>
+
+    <select id="selectNewsById" parameterType="int" resultMap="DATA" >
+        SELECT * FROM
+        <include refid="TABLE"/>
+        WHERE news_id = #{newsId}
+    </select>
+
 </mapper>

@@ -12,6 +12,9 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import javax.jws.soap.SOAPBinding;
+
+import java.util.List;
 
 import static org.junit.Assert.fail;
 
@@ -34,6 +37,18 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
         } catch (Exception e) {
             logger.error("fail",e);
             fail();
+        }
+    }
+
+    @Test
+    public void getListUserById(){
+        try {
+            List<User>  a = userService.getAllUser();
+            System.out.print("===================================="+"\n");
+            System.out.print(a.size()+"\n");
+            System.out.print("===================================="+"\n");
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 

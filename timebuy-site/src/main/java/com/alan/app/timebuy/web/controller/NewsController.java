@@ -16,6 +16,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.Date;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -49,7 +51,13 @@ public class NewsController extends BaseController{
                 System.out.println("文件名称: " + pic.getName());
                 System.out.println("文件原名: " + pic.getOriginalFilename());
                 System.out.println("========================================");*/
-                String pictu = pic.getOriginalFilename();
+                //生成文件名
+                String fileName1 = pic.getOriginalFilename();
+                String prefix=fileName1.substring(fileName1.lastIndexOf(".") + 1);
+                int x=(int)(Math.random()*100);
+                //生成文件名为时间戳+随机数+文件后缀名
+                String pictu = new Date().getTime() + String.valueOf(x) +"."+ prefix;
+                //将所有文件名以“，”分开
                 picture.append(pictu).append(",");
                 String path = httpRequest.getSession().getServletContext().getRealPath("/")+"upload"+File.separator+pic.getName();
                 File targetFile = new File(path);
@@ -95,4 +103,61 @@ public class NewsController extends BaseController{
         newsService.addNews(news1);
         return createSuccessResponse(null);
   }
+
+    /**
+     * 查询某个userId的全部News
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/user")
+    @ResponseBody
+    public String userNews(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        int userId = Integer.parseInt(request.getString("userId"));
+        List<News> l = newsService.getNewsById(userId);
+        if (l.size()==0){
+              return createFailResponse(1002,"无消息");
+        }else {
+            return createSuccessResponse(l);
+        }
+    }
+
+    /**
+     * 查询全部News
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/all")
+    @ResponseBody
+    public String allNews(HttpServletRequest httpRequest) throws Exception{
+        List<News> l = newsService.getNewsAll();
+        if(l.size()==0){
+            return createFailResponse(1002,"无消息");
+        }else {
+            return createSuccessResponse(l);
+        }
+    }
+
+    /**
+     * 查询某个newsId的news
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/one")
+    @ResponseBody
+    public String oneNews(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        int newsId = Integer.parseInt(request.getString("newsId"));
+        News n = newsService.selectNewsById(newsId);
+        if (n == null){
+           return createFailResponse(1002,"消息无内容");
+        }else {
+            return createSuccessResponse(n);
+        }
+    }
 }

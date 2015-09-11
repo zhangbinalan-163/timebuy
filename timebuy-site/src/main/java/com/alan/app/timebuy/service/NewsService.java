@@ -19,4 +19,26 @@ public interface NewsService {
      */
     void addNews(News news) throws TimeBuyException;
 
+    /**
+     * 根据指定Id查找News
+     * @param userId
+     * @return List<User>
+     * @throws TimeBuyException
+     */
+    List<News> getNewsById(int userId) throws TimeBuyException;
+
+    /**
+     * 获取指定所有News
+     * @return List<News>
+     * @throws SQLException
+     */
+    List<News> getNewsAll() throws  TimeBuyException;
+
+    /**
+     * 根据newsId获取一条news
+     * @param  newsId
+     * @throws SQLException
+     */
+    News selectNewsById(int newsId) throws Exception;
+
 }

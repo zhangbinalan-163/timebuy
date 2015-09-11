@@ -40,7 +40,7 @@ public class UserDaoTest extends AbstractJUnit4SpringContextTests {
     @Test
     public void getByIdTest() {
         try {
-            User userInfo = userDao.getById(9);
+            User userInfo = userDao.getById(15);
             logger.info(StringUtils.toJsonString(userInfo));
         } catch (Exception e) {
             logger.error("fail",e);

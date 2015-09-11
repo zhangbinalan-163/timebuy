@@ -107,7 +107,7 @@ public class RegisterControllerTest {
 
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/user/info")
-                        .param("phone", "18069812068")
+                        .param("phone", "18767122255")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();

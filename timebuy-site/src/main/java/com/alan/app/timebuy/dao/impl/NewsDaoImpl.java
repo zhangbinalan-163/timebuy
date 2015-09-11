@@ -32,4 +32,32 @@ public class NewsDaoImpl implements NewsDao{
             throw new TimeBuyException("插入消息异常",e);
         }
     }
+
+    @Override
+    public List<News> getNewsById(int userId) throws TimeBuyException{
+        try {
+            List<News> news = newsMapper.getNewsById(userId);
+            return news;
+        }catch (Exception e){
+           throw  new TimeBuyException("查询指定消息异常",e);
+        }
+    }
+
+    @Override
+    public List<News> getNewsAll() throws TimeBuyException{
+        try {
+            return newsMapper.getNewsAll();
+        }catch (Exception e){
+            throw new TimeBuyException("查询所有消息异常",e);
+        }
+    }
+
+    @Override
+    public News selectNewsById(int newsId) throws TimeBuyException{
+        try {
+            return newsMapper.selectNewsById(newsId);
+        }catch (Exception e){
+           throw new TimeBuyException("查询单个消息异常",e);
+        }
+    }
 }

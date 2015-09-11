@@ -1,8 +1,10 @@
 package com.alan.app.timebuy.dao.mapper;
 
 import com.alan.app.timebuy.entity.News;
+import com.alan.app.timebuy.entity.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * 消息的mapper
@@ -16,5 +18,27 @@ public interface NewsMapper {
      * @throws SQLException
      */
     void insert(News news) throws Exception;
+
+    /**
+     * 获取指定Id的News
+     * @return List<User>
+     * @throws SQLException
+     */
+    List<News> getNewsById(int userId) throws Exception;
+
+    /**
+     * 获取指定所有News
+     * @return List<News>
+     * @throws SQLException
+     */
+    List<News> getNewsAll() throws  Exception;
+
+    /**
+     * 根据newsId获取一条news
+     * @param  newsId
+     * @throws SQLException
+     */
+    News selectNewsById(int newsId) throws Exception;
+
 
 }

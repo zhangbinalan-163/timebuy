@@ -63,4 +63,40 @@ public class NewsControllerTest {
         String resultContent=result.getResponse().getContentAsString();
         logger.info(resultContent);
     }
+
+    @Test
+    public void getNewsById() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/user")
+                        .param("userId", "15")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void getNewsAll() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/all")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void getNewsOne() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/one")
+                        .param("newsId","10")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
 }

@@ -70,13 +70,17 @@ public class UserInfoController extends BaseController{
         User user1 = userService.getUserById(userId);
         MultipartHttpServletRequest multipartRequest  =  (MultipartHttpServletRequest) httpRequest;
         MultipartFile file  =  multipartRequest.getFile("headIcon");
-        String fileName = file.getOriginalFilename();
+        String fileName1 = file.getOriginalFilename();
+        String prefix=fileName1.substring(fileName1.lastIndexOf(".") + 1);
+        int x=(int)(Math.random()*100);
+        //生成文件名为时间戳+随机数+文件后缀名
+        String fileName = new Date().getTime() + String.valueOf(x) +"."+ prefix;
         if(file.isEmpty()){
             fileName = user1.getHeadIcon();
         }else{
             String path = httpRequest.getSession().getServletContext().getRealPath("/")+"upload"+File.separator+fileName;
-            System.out.print("===================================================");
-            System.out.print(path);
+            System.out.print("==================================================="+"\n");
+            System.out.print(path+"\n");
             System.out.print("===================================================");
             File targetFile = new File(path);
             if(!targetFile.exists()){
