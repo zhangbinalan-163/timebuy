@@ -45,4 +45,19 @@
         WHERE news_id = #{newsId}
     </select>
 
+    <update id="accept" parameterType="com.alan.app.timebuy.entity.News">
+       UPDATE
+       <include refid="TABLE"/>
+        <set>
+              <if test="acceptUserid != null">accept_userid=#{acceptUserid},</if>
+        </set>
+        WHERE news_id = #{newsId}
+    </update>
+
+    <select id="scheduleNews" parameterType="com.alan.app.timebuy.entity.News" resultMap="DATA">
+       SELECT * FROM
+       <include refid="TABLE"/>
+        WHERE userid = #{userid} OR accept_userid = #{userid}
+    </select>
+
 </mapper>

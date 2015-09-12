@@ -160,4 +160,49 @@ public class NewsController extends BaseController{
             return createSuccessResponse(n);
         }
     }
+
+    /**
+     * 接受消息
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/accept")
+    @ResponseBody
+    public String accept(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        int acceptUserId = Integer.parseInt(request.getString("acceptUserId"));
+        int newsid = Integer.parseInt(request.getString("newsId"));
+        if(acceptUserId==0 ||newsid==0 ){
+               return createFailResponse(1002, "获取参数失败");
+        }
+        News news = new News();
+        news.setNewsId(newsid);
+        news.setAcceptUserid(acceptUserId);
+        newsService.accept(news);
+        return createSuccessResponse("1000",null);
+    }
+
+    /**
+     * 我的日常
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/schedule")
+    @ResponseBody
+    public String scheduleNews(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        int userId = Integer.parseInt(request.getString("userId"));
+        if(userId==0){
+             return createFailResponse(1002,"获取参数失败");
+        }
+        News news = new News();
+        news.setUserid(userId);
+        List<News> l = newsService.scheduleNews(news);
+        return createSuccessResponse(l);
+    }
+
 }

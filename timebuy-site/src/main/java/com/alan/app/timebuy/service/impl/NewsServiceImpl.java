@@ -62,4 +62,22 @@ public class NewsServiceImpl implements NewsService{
         return newsDao.selectNewsById(newsId);
     }
 
+    /**
+     * 接受消息接口
+     * @param  news
+     * @throws TimeBuyException
+     */
+    public void accept(News news) throws TimeBuyException{
+            newsDao.accept(news);
+    }
+
+    /**
+     * 我的日常
+     * @param  news
+     * @throws TimeBuyException
+     */
+    public List<News> scheduleNews(News news) throws TimeBuyException{
+        return newsDao.scheduleNews(news);
+    }
+
 }

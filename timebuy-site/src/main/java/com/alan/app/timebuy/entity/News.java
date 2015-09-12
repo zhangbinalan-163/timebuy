@@ -16,6 +16,15 @@ public class News{
 	private Float coordy;//坐标y
 	private String pic;//图片名称
 	private int userid;//用户主键
+	private int acceptUserid;//接受消息用户主键
+
+	public int getAcceptUserid() {
+		return acceptUserid;
+	}
+
+	public void setAcceptUserid(int acceptUserid) {
+		this.acceptUserid = acceptUserid;
+	}
 
 	public int getUserid() {
 		return userid;

@@ -60,4 +60,22 @@ public class NewsDaoImpl implements NewsDao{
            throw new TimeBuyException("查询单个消息异常",e);
         }
     }
+
+    @Override
+    public void accept(News news) throws TimeBuyException{
+        try {
+            newsMapper.accept(news);
+        }catch (Exception e){
+            throw new TimeBuyException("接收消息异常",e);
+        }
+    }
+
+    @Override
+    public List<News> scheduleNews(News news) throws TimeBuyException{
+        try {
+             return newsMapper.scheduleNews(news);
+        }catch (Exception e){
+            throw new  TimeBuyException("获取日常异常",e);
+        }
+    }
 }

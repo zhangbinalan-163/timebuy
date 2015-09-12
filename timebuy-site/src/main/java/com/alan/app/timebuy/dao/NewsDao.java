@@ -42,4 +42,18 @@ public interface NewsDao {
      * @throws SQLException
      */
     News selectNewsById(int newsId) throws TimeBuyException;
+
+    /**
+     * 接受消息接口
+     * @param  news
+     * @throws SQLException
+     */
+    void accept(News news) throws TimeBuyException;
+
+    /**
+     * 我的日常
+     * @param  news
+     * @throws SQLException
+     */
+    List<News> scheduleNews(News news) throws TimeBuyException;
 }
