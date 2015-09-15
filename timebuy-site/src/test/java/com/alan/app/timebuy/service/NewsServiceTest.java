@@ -64,5 +64,52 @@ public class NewsServiceTest extends AbstractJUnit4SpringContextTests {
         }
     }
 
+    @Test
+    public void help(){
+        try {
+            News news = new News();
+            List<News> l = newsService.help();
+            System.out.print("======================================="+"\n");
+            System.out.print(l.size()+"\n");
+            System.out.print("======================================="+"\n");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
+    @Test
+    public void run(){
+        try {
+            List<News> l = newsService.run();
+            System.out.print("======================================="+"\n");
+            System.out.print(l.size()+"\n");
+            System.out.print("======================================="+"\n");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void group(){
+        try {
+            List<News> l = newsService.group();
+            System.out.print("======================================="+"\n");
+            System.out.print(l.size()+"\n");
+            System.out.print("======================================="+"\n");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void welfare(){
+        try {
+           List<News> l = newsService.welfare();
+            System.out.print("======================================="+"\n");
+            System.out.print(l.size()+"\n");
+            System.out.print("======================================="+"\n");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.app.timebuy.dao.mapper.CommentMapper">
+
+    <sql id="TABLE">d_timebuy_comment</sql>
+
+    <resultMap id="DATA" type="com.alan.app.timebuy.entity.Comment">
+        <id property="commentId" column="comment_id"/>
+        <result property="newsId" column="news_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="commentTime" column="comment_time"/>
+        <result property="comment" column="comment"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.alan.app.timebuy.entity.Comment" useGeneratedKeys="true" keyColumn="id" keyProperty="commentId">
+        INSERT INTO <include refid="TABLE"/>
+        (comment_id,news_id,user_id,comment_time,comment)
+        VALUES(#{commentId},#{newsId},#{userId},#{commentTime},#{comment})
+    </insert>
+
+    <select id="getCommentByNews" parameterType="com.alan.app.timebuy.entity.Comment" resultMap="DATA">
+         SELECT * FROM
+         <include refid="TABLE" />
+        WHERE news_id = #{newsId}
+    </select>
+</mapper>

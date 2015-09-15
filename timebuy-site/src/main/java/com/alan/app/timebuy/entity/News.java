@@ -17,6 +17,24 @@ public class News{
 	private String pic;//图片名称
 	private int userid;//用户主键
 	private int acceptUserid;//接受消息用户主键
+	private int kind;//标签种类 1求助 2跑腿 3组局 4公益 5自定义
+	private String other;//自定义标签
+
+	public int getKind() {
+		return kind;
+	}
+
+	public void setKind(int kind) {
+		this.kind = kind;
+	}
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
+	}
 
 	public int getAcceptUserid() {
 		return acceptUserid;

@@ -55,4 +55,27 @@ public interface NewsService {
      */
     List<News> scheduleNews(News news) throws TimeBuyException;
 
+    /**
+     * 所有求助消息
+     * @throws SQLException
+     */
+    List<News> help() throws TimeBuyException;
+
+    /**
+     * 所有跑腿消息
+     * @throws SQLException
+     */
+    List<News> run() throws TimeBuyException;
+
+    /**
+     * 所有组局消息
+     * @throws SQLException
+     */
+    List<News> group() throws TimeBuyException;
+
+    /**
+     * 所有公益消息
+     * @throws SQLException
+     */
+    List<News> welfare() throws TimeBuyException;
 }

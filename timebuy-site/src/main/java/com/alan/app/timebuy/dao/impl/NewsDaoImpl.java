@@ -78,4 +78,40 @@ public class NewsDaoImpl implements NewsDao{
             throw new  TimeBuyException("获取日常异常",e);
         }
     }
+
+    @Override
+    public List<News> help() throws TimeBuyException{
+        try {
+            return newsMapper.help();
+        }catch (Exception e){
+            throw new TimeBuyException("获取求助信息失败",e);
+        }
+    }
+
+    @Override
+    public List<News> run() throws TimeBuyException{
+        try {
+          return newsMapper.run();
+        }catch (Exception e){
+            throw new TimeBuyException("获取跑腿信息失败",e);
+        }
+    }
+
+    @Override
+    public List<News> group() throws TimeBuyException{
+        try {
+            return newsMapper.group();
+        }catch (Exception e){
+            throw new TimeBuyException("获取组局信息失败",e);
+        }
+    }
+
+    @Override
+    public List<News> welfare() throws TimeBuyException{
+        try {
+          return newsMapper.welfare();
+        }catch (Exception e){
+            throw new TimeBuyException("获取公益信息失败",e);
+        }
+    }
 }

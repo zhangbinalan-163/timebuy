@@ -12,7 +12,7 @@ public class Message {
     private int acceptUserId;//接受消息用户主键
     private int sendUserId;//发送消息用户主键
     private String message;//消息内容
-    private Date time;//发送消息时间
+    private Date messageTime;//发送消息时间
 
     public int getMessageId() {
         return messageId;
@@ -46,11 +46,11 @@ public class Message {
         this.message = message;
     }
 
-    public Date getTime() {
-        return time;
+    public Date getMessageTime() {
+        return messageTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setMessageTime(Date messageTime) {
+        this.messageTime = messageTime;
     }
 }

@@ -107,5 +107,9 @@
 		<property name="mapperInterface" value="com.alan.app.timebuy.dao.mapper.NewsMapper"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
+	<bean id="commentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.alan.app.timebuy.dao.mapper.CommentMapper"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
 
 </beans>

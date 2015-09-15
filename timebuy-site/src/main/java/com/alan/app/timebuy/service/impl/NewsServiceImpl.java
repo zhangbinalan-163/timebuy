@@ -80,4 +80,36 @@ public class NewsServiceImpl implements NewsService{
         return newsDao.scheduleNews(news);
     }
 
+    /**
+     * 所有求助消息
+     * @throws TimeBuyException
+     */
+    public List<News> help() throws TimeBuyException{
+        return newsDao.help();
+    }
+
+    /**
+     * 所有跑腿消息
+     * @throws TimeBuyException
+     */
+    public List<News> run() throws TimeBuyException{
+        return newsDao.run();
+    }
+
+    /**
+     * 所有组局消息
+     * @throws TimeBuyException
+     */
+    public List<News> group() throws TimeBuyException{
+        return newsDao.group();
+    }
+
+    /**
+     * 所有公益消息
+     * @throws TimeBuyException
+     */
+    public List<News> welfare() throws TimeBuyException{
+        return newsDao.welfare();
+    }
+
 }

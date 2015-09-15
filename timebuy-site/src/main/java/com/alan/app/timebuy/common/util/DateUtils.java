@@ -47,12 +47,27 @@ public class DateUtils {
     }
 
     /**
-     * String?×ª»»³ÉDate¾«È·µ½·Ö
+     * String?×ªï¿½ï¿½ï¿½ï¿½Dateï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½
      * @param dateStr
      * @return
      */
     public static Date StringToDate2(String dateStr){
         DateFormat dd=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date=null;
+        java.sql.Date sqlDate=null ;
+        try {
+            date = (Date)dd.parse(dateStr);
+            sqlDate = new java.sql.Date(date.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        return sqlDate;
+    }
+
+    public static Date StringToDate3(String dateStr){
+        DateFormat dd=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date=null;
         java.sql.Date sqlDate=null ;
         try {

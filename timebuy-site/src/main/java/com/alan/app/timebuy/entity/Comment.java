@@ -11,7 +11,7 @@ public class Comment {
     private int commentId;//评论主键
     private int newsId;//消息主键
     private int userId;//用户主键
-    private Date time;//评论时间
+    private Date commentTime;//评论时间
     private String comment;//评论内容
 
     public int getCommentId() {
@@ -38,12 +38,12 @@ public class Comment {
         this.userId = userId;
     }
 
-    public Date getTime() {
-        return time;
+    public Date getCommentTime() {
+        return commentTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setCommentTime(Date commentTime) {
+        this.commentTime = commentTime;
     }
 
     public String getComment() {

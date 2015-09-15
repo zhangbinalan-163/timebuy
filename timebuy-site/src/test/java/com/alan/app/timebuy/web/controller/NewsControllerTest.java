@@ -125,4 +125,47 @@ public class NewsControllerTest {
         logger.info(resultContent);
     }
 
+    @Test
+    public void help() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/help")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void run() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/run")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void group() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/group")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void welfare() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/welfare")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
 }

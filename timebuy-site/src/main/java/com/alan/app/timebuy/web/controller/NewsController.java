@@ -84,8 +84,9 @@ public class NewsController extends BaseController{
         String coordname = request.getString("coordname");
         float coordx = Float.parseFloat(request.getString("coordx"));
         float coordy = Float.parseFloat(request.getString("coordy"));
-
         int userid = Integer.parseInt(request.getString("userid"));
+        int kind = Integer.parseInt(request.getString("kind"));
+        String other = request.getString("other");
 
         News news1 = new News();
         news1.setPhone(phone);
@@ -99,6 +100,8 @@ public class NewsController extends BaseController{
         news1.setNews(news);
         news1.setPic(picture.toString());
         news1.setUserid(userid);
+        news1.setKind(kind);
+        news1.setOther(other);
 
         newsService.addNews(news1);
         return createSuccessResponse(null);
@@ -204,5 +207,79 @@ public class NewsController extends BaseController{
         List<News> l = newsService.scheduleNews(news);
         return createSuccessResponse(l);
     }
+
+    /**
+     * 所有求助消息
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/help")
+    @ResponseBody
+    public String help(HttpServletRequest httpRequest) throws Exception{
+         Request request = getRequest(httpRequest);
+         List<News> l = newsService.help();
+        if(l.size()==0){
+            return createFailResponse(2006,null);
+        }else {
+            return createSuccessResponse(l);
+        }
+    }
+
+    /**
+     * 所有跑腿消息
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/run")
+    @ResponseBody
+    public String run(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        List<News> l = newsService.run();
+        if(l.size()==0){
+            return createFailResponse(2006,null);
+        }else {
+            return createSuccessResponse(l);
+        }
+    }
+
+    /**
+     * 所有组局消息
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/group")
+    @ResponseBody
+    public String group(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        List<News> l = newsService.group();
+        if(l.size()==0){
+            return createFailResponse(2006,null);
+        }else {
+            return createSuccessResponse(l);
+        }
+    }
+
+    /**
+     * 所有公益消息
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/welfare")
+    @ResponseBody
+    public String welfare(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        List<News> l = newsService.welfare();
+        if(l.size()==0){
+            return createFailResponse(2006,null);
+        }else {
+            return createSuccessResponse(l);
+        }
+    }
+
+
 
 }

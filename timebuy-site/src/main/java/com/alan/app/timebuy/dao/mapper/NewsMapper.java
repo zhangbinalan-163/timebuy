@@ -54,4 +54,27 @@ public interface NewsMapper {
      */
     List<News> scheduleNews(News news) throws Exception;
 
+    /**
+     * 所有求助消息
+     * @throws SQLException
+     */
+    List<News> help() throws Exception;
+
+    /**
+     * 所有跑腿消息
+     * @throws SQLException
+     */
+    List<News> run() throws Exception;
+
+    /**
+     * 所有组局消息
+     * @throws SQLException
+     */
+    List<News> group() throws Exception;
+
+    /**
+     * 所有公益消息
+     * @throws SQLException
+     */
+    List<News> welfare() throws Exception;
 }
