@@ -3,6 +3,8 @@ package com.alan.app.timebuy.web.controller;
 import com.alan.app.timebuy.common.exception.InvalidParamException;
 import com.alan.app.timebuy.common.util.DateUtils;
 import com.alan.app.timebuy.common.util.StringUtils;
+import com.alan.app.timebuy.common.util.Page;
+import com.alan.app.timebuy.common.util.PageUtils;
 import com.alan.app.timebuy.entity.News;
 import com.alan.app.timebuy.service.NewsService;
 import com.alan.app.timebuy.web.vo.Request;
@@ -15,6 +17,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -82,8 +85,8 @@ public class NewsController extends BaseController{
         String label = request.getString("label");
         float money = Float.parseFloat(request.getString("money"));
         String coordname = request.getString("coordname");
-        float coordx = Float.parseFloat(request.getString("coordx"));
-        float coordy = Float.parseFloat(request.getString("coordy"));
+        double coordx = Float.parseFloat(request.getString("coordx"));
+        double coordy = Float.parseFloat(request.getString("coordy"));
         int userid = Integer.parseInt(request.getString("userid"));
         int kind = Integer.parseInt(request.getString("kind"));
         String other = request.getString("other");
@@ -102,9 +105,10 @@ public class NewsController extends BaseController{
         news1.setUserid(userid);
         news1.setKind(kind);
         news1.setOther(other);
+        news1.setPraise(0);
 
         newsService.addNews(news1);
-        return createSuccessResponse(null);
+        return createSuccessResponse("1000",null);
   }
 
     /**
@@ -136,11 +140,37 @@ public class NewsController extends BaseController{
     @RequestMapping(value = "/all")
     @ResponseBody
     public String allNews(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关参数
+        Date timeNow = DateUtils.StringToDate3(request.getString("timeNow"));
+        int userId = Integer.parseInt(request.getString("userId"));
+        double coordx = Float.parseFloat(request.getString("coordx"));
+        double coordy = Float.parseFloat(request.getString("coordy"));
+
         List<News> l = newsService.getNewsAll();
+
+        //对所有消息进行筛选排
+        for (int i = l.size()-1; i >= 0; i--){
+            double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
+            if (distance<9000000){
+               l.remove(i);
+            }
+        }
+
+        // 获得记录数
+        int totalCount = l.size();
+        int currentPage = Integer.parseInt(request.getString("currentPage"));
+        // 设置分页信息
+        Page page = PageUtils.createPage(5, totalCount, currentPage);
+        //取得该频道下的记录
+        List<News> l2 = new ArrayList<News>();
+        for(int i=0;i<page.getEveryPage();i++){
+            l2.add(i,l.get((currentPage-1)*5+i));
+        }
         if(l.size()==0){
             return createFailResponse(1002,"无消息");
         }else {
-            return createSuccessResponse(l);
+            return createSuccessResponse(l2);
         }
     }
 

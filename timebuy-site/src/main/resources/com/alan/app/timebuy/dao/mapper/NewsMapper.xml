@@ -21,12 +21,13 @@
         <result property="userid" column="userid"/>
         <result property="kind" column="kind"/>
         <result property="other" column="other"/>
+        <result property="praise" column="praise"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.News" useGeneratedKeys="true" keyColumn="id" keyProperty="newsId">
         INSERT INTO <include refid="TABLE"/>
-        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid,kind,other)
-        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid},#{kind},#{other})
+        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid,kind,other,praise)
+        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid},#{kind},#{other},#{praise})
     </insert>
 
     <select id="getNewsById" parameterType="int" resultMap="DATA">
@@ -85,5 +86,14 @@
        <include refid="TABLE"/>
        WHERE kind = 14 OR kind = 41 OR kind = 42 OR kind = 24 OR kind = 43 OR kind = 34 OR kind = 45 OR kind = 54
     </select>
+
+    <update id="praise" parameterType="com.alan.app.timebuy.entity.News">
+        UPDATE
+        <include refid="TABLE" />
+        <set>
+            <if test="praise != null">praise=#{praise}</if>
+        </set>
+        WHERE news_id = #{newsId}
+    </update>
 
 </mapper>

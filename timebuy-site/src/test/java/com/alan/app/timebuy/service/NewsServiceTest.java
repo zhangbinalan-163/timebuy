@@ -112,4 +112,18 @@ public class NewsServiceTest extends AbstractJUnit4SpringContextTests {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void praise(){
+        try {
+            News n1 = new News();
+            n1.setNewsId(1);
+            int a = newsService.selectNewsById(1).getPraise();
+            n1.setPraise(a+1);
+          newsService.praise(n1);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

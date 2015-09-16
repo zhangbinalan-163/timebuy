@@ -78,4 +78,10 @@ public interface NewsService {
      * @throws SQLException
      */
     List<News> welfare() throws TimeBuyException;
+
+    /**
+     * 点赞
+     * @throws SQLException
+     */
+    void praise(News news) throws TimeBuyException;
 }

@@ -112,4 +112,12 @@ public class NewsServiceImpl implements NewsService{
         return newsDao.welfare();
     }
 
+    /**
+     * 点赞
+     * @throws TimeBuyException
+     */
+     public void praise(News news) throws TimeBuyException{
+        newsDao.praise(news);
+     }
+
 }

@@ -114,4 +114,13 @@ public class NewsDaoImpl implements NewsDao{
             throw new TimeBuyException("获取公益信息失败",e);
         }
     }
+
+    @Override
+    public void praise(News news) throws TimeBuyException{
+        try {
+          newsMapper.praise(news);
+        }catch (Exception e){
+            throw new TimeBuyException("点赞失败",e);
+        }
+    }
 }

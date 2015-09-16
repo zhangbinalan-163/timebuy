@@ -80,4 +80,10 @@ public interface NewsDao {
      * @throws SQLException
      */
     List<News> welfare() throws TimeBuyException;
+
+    /**
+     * 点赞
+     * @throws SQLException
+     */
+    void praise(News news) throws TimeBuyException;
 }

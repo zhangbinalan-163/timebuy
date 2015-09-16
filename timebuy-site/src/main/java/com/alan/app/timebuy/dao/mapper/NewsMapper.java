@@ -77,4 +77,10 @@ public interface NewsMapper {
      * @throws SQLException
      */
     List<News> welfare() throws Exception;
+
+    /**
+     * 点赞
+     * @throws SQLException
+     */
+    void praise(News news) throws Exception;
 }

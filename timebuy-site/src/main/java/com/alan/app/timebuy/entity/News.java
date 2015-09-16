@@ -12,13 +12,22 @@ public class News{
 	private String label;//标签
 	private Float money;//金额
 	private String coordname;//坐标名称
-	private Float coordx;//坐标x
-	private Float coordy;//坐标y
+	private Double coordx;//坐标x
+	private Double coordy;//坐标y
 	private String pic;//图片名称
 	private int userid;//用户主键
 	private int acceptUserid;//接受消息用户主键
 	private int kind;//标签种类 1求助 2跑腿 3组局 4公益 5自定义
 	private String other;//自定义标签
+	private int praise;//点赞数
+
+	public int getPraise() {
+		return praise;
+	}
+
+	public void setPraise(int praise) {
+		this.praise = praise;
+	}
 
 	public int getKind() {
 		return kind;
@@ -124,20 +133,19 @@ public class News{
 		this.coordname = coordname;
 	}
 
-	public Float getCoordx() {
-		return this.coordx;
+	public Double getCoordx() {
+		return coordx;
 	}
 
-	public void setCoordx(Float coordx) {
+	public void setCoordx(Double coordx) {
 		this.coordx = coordx;
 	}
 
-	public Float getCoordy() {
-		return this.coordy;
+	public Double getCoordy() {
+		return coordy;
 	}
 
-	public void setCoordy(Float coordy) {
+	public void setCoordy(Double coordy) {
 		this.coordy = coordy;
 	}
-
 }
