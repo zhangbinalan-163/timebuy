@@ -8,7 +8,10 @@
 
     <resultMap id="DATA" type="com.alan.app.timebuy.entity.User">
         <id property="userId" column="user_id" />
-        <result property="userName" column="user_name"/>
+        <result property="userNameQQ" column="user_name_qq"/>
+        <result property="userNameSina" column="user_name_sina"/>
+        <result property="userNameWx" column="user_name_wx"/>
+        <result property="userNameZfb" column="user_name_zfb"/>
         <result property="nickName" column="nick_name"/>
         <result property="phone" column="phone"/>
         <result property="sex" column="sex"/>
@@ -23,19 +26,23 @@
         <result property="signature" column="signature"/>
         <result property="source" column="source"/>
         <result property="status" column="status"/>
+        <result property="money" column="money"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.User" useGeneratedKeys="true" keyColumn="id" keyProperty="userId">
         INSERT INTO <include refid="TABLE"/>
-        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status)
-        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status})
+        (user_name_qq,user_name_sina,user_name_wx,user_name_zfb,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status,money)
+        VALUES(#{userNameQQ},#{userNameSina},#{userNameWx},#{userNameZfb},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status},#{money})
     </insert>
 
     <update id="update" parameterType="com.alan.app.timebuy.entity.User">
         update
         <include refid="TABLE" />
         <set>
-            <if test="userName != null">user_name=#{userName},</if>
+            <if test="userNameQQ != null">user_name_qq=#{userNameQQ},</if>
+            <if test="userNameSina != null">user_name_sina=#{userNameSina},</if>
+            <if test="userNameWx != null">user_name_wx=#{userNameWx},</if>
+            <if test="userNameZfb != null">user_name_zfb=#{userNameZfb},</if>
             <if test="nickName != null">nick_name=#{nickName},</if>
             <if test="phone != null">phone=#{phone},</if>
             <if test="sex != null">sex=#{sex},</if>
@@ -48,10 +55,12 @@
             <if test="updateTime != null">update_time=#{updateTime},</if>
             <if test="signature != null">signature=#{signature},</if>
             <if test="source != null">source=#{source},</if>
-            <if test="status != null">status=#{status}</if>
+            <if test="status != null">status=#{status},</if>
+            <if test="money != null">money=#{money}</if>
         </set>
         where user_id=#{userId}
     </update>
+
     <update id="updatePass" parameterType="com.alan.app.timebuy.entity.User">
         update
         <include refid="TABLE" />
@@ -72,6 +81,30 @@
         select * from
         <include refid="TABLE" />
         where phone=#{phone}
+    </select>
+
+    <select id="getByQQ"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_qq=#{userNameQQ}
+    </select>
+
+    <select id="getBySina"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_sina=#{userNameSina}
+    </select>
+
+    <select id="getByWx"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_wx=#{userNameWx}
+    </select>
+
+    <select id="getByZfb"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_zfb=#{userNameZfb}
     </select>
 
     <select id="getById"  parameterType="int" resultMap="DATA">

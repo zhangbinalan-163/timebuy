@@ -23,12 +23,13 @@
         <result property="signature" column="signature"/>
         <result property="source" column="source"/>
         <result property="status" column="status"/>
+        <result property="money" column="money"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.User" useGeneratedKeys="true" keyColumn="id" keyProperty="userId">
         INSERT INTO <include refid="TABLE"/>
-        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status)
-        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status})
+        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status,money)
+        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status},#{money})
     </insert>
 
     <update id="update" parameterType="com.alan.app.timebuy.entity.User">
@@ -48,10 +49,12 @@
             <if test="updateTime != null">update_time=#{updateTime},</if>
             <if test="signature != null">signature=#{signature},</if>
             <if test="source != null">source=#{source},</if>
-            <if test="status != null">status=#{status}</if>
+            <if test="status != null">status=#{status},</if>
+            <if test="money != null">money=#{money}</if>
         </set>
         where user_id=#{userId}
     </update>
+
     <update id="updatePass" parameterType="com.alan.app.timebuy.entity.User">
         update
         <include refid="TABLE" />
@@ -72,6 +75,30 @@
         select * from
         <include refid="TABLE" />
         where phone=#{phone}
+    </select>
+
+    <select id="getByQQ"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_qq=#{userNameQQ}
+    </select>
+
+    <select id="getBySina"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_sina=#{userNameSina}
+    </select>
+
+    <select id="getByWx"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_wx=#{userNameWx}
+    </select>
+
+    <select id="getByZfb"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
+        select * from
+        <include refid="TABLE" />
+        where user_name_zfb=#{userNameZfb}
     </select>
 
     <select id="getById"  parameterType="int" resultMap="DATA">

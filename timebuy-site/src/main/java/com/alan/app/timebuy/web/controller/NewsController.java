@@ -49,11 +49,6 @@ public class NewsController extends BaseController{
             if(pic.isEmpty()){
                 System.out.println("文件未上传");
             }else{
-/*              System.out.println("文件长度: " + pic.getSize());
-                System.out.println("文件类型: " + pic.getContentType());
-                System.out.println("文件名称: " + pic.getName());
-                System.out.println("文件原名: " + pic.getOriginalFilename());
-                System.out.println("========================================");*/
                 //生成文件名
                 String fileName1 = pic.getOriginalFilename();
                 String prefix=fileName1.substring(fileName1.lastIndexOf(".") + 1);
@@ -82,14 +77,12 @@ public class NewsController extends BaseController{
         String news = request.getString("news");
         Date starttime =  DateUtils.StringToDate2(request.getString("starttime"));
         Date finishtime =  DateUtils.StringToDate2(request.getString("finishtime"));
-        String label = request.getString("label");
+        int label = Integer.parseInt(request.getString("label"));
         float money = Float.parseFloat(request.getString("money"));
         String coordname = request.getString("coordname");
         double coordx = Float.parseFloat(request.getString("coordx"));
         double coordy = Float.parseFloat(request.getString("coordy"));
         int userid = Integer.parseInt(request.getString("userid"));
-        int kind = Integer.parseInt(request.getString("kind"));
-        String other = request.getString("other");
 
         News news1 = new News();
         news1.setPhone(phone);
@@ -103,8 +96,6 @@ public class NewsController extends BaseController{
         news1.setNews(news);
         news1.setPic(picture.toString());
         news1.setUserid(userid);
-        news1.setKind(kind);
-        news1.setOther(other);
         news1.setPraise(0);
 
         newsService.addNews(news1);
@@ -152,7 +143,11 @@ public class NewsController extends BaseController{
         //对所有消息进行筛选排
         for (int i = l.size()-1; i >= 0; i--){
             double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
+            Date timeEarly = DateUtils.StringToDate3(request.getString("starttime"));
+            long temp = timeNow.getTime() - timeEarly.getTime();//相差秒数
             if (distance<9000000){
+               l.remove(i);
+            }else if (temp>3600){
                l.remove(i);
             }
         }
@@ -309,7 +304,4 @@ public class NewsController extends BaseController{
             return createSuccessResponse(l);
         }
     }
-
-
-
 }

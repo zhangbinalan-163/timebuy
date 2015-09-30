@@ -2,6 +2,8 @@
   <library name="Gradle: org.springframework:spring-webmvc:4.2.0.RELEASE">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.2.0.RELEASE/158244f0d8f79654fa7860385fd3865db6f006ef/spring-webmvc-4.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../com.springsource.org.apache.commons.fileupload-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../com.springsource.org.apache.commons.io-1.4.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -18,12 +18,15 @@ public class User {
     public static final int STATUS_FROBIDDEN = 2;//禁用状态
     public static final int STATUS_DELETED = 3;//删除状态
 
-    public static final int SOURCE_APP = 1;//APP注册
-    public static final int SOURCE_THIRD_SYSTEM = 2;//第三方系统绑定注册
+    public static final int SOURCE_APP = 1;//APP注册 即手机号注册
+    public static final int SOURCE_THIRD_QQ = 2;//第三方系统绑定注册QQ
+    public static final int SOURCE_THIRD_SINA = 3;//第三方系统绑定注册新浪
+    public static final int SOURCE_THIRD_WX = 4;//第三方系统绑定注册微信
+    public static final int SOURCE_THIRD_ZFB = 5;//第三方系统绑定注册支付宝
 
     private Long userId;
     private String phone;//手机号
-    private String userName;//用户名
+    private String userName;//第三方账号
     private String nickName;//用户昵称
     private String headIcon;//头像URL
     private Integer sex =SEX_MALE;//用户性别
@@ -37,7 +40,8 @@ public class User {
     private String signature;//个性签名
     private Integer status=STATUS_NORMAL;//用户的状态
     private Integer nearby = NEARBY_VISIBLE;
-    private Integer source=SOURCE_APP;//账号的注册来源
+    private Integer source=SOURCE_APP;//账号的注册来源 1手机号注册 2第三方QQ 3第三方微信 4第三方支付宝
+    private float money;//钱包
 
     public Long getUserId() {
         return userId;
@@ -45,6 +49,14 @@ public class User {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public float getMoney() {
+        return money;
+    }
+
+    public void setMoney(float money) {
+        this.money = money;
     }
 
     public String getUserName() {

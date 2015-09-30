@@ -114,4 +114,129 @@ public class RegisterControllerTest {
         String resultContent=result.getResponse().getContentAsString();
         logger.info(resultContent);
     }
+
+    @Test
+    public void sendUserQQTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/user/QQ")
+                        .param("phone", "18767122255")
+                        .param("QQ", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void sendUserSinaTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/user/sina")
+                        .param("phone", "18767122255")
+                        .param("sina", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void sendUserWxTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/user/wx")
+                        .param("phone", "18767122255")
+                        .param("wx", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void sendUserZfbTest() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/user/zfb")
+                        .param("phone", "18767122255")
+                        .param("zfb", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void RegQQ() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/reg/QQ")
+                        .param("phone", "13758240893")
+                        .param("QQ", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void RegSina() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/reg/sina")
+                        .param("phone", "13758240898")
+                        .param("sina", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void RegWx() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/reg/wx")
+                        .param("phone", "13758240897")
+                        .param("wx", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void RegZfb() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/reg/zfb")
+                        .param("phone", "13758240891")
+                        .param("zfb", "357719970")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void RegPhone() throws Exception {
+
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/reg/phone")
+                        .param("phone", "13758240890")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
 }

@@ -32,12 +32,12 @@ public class RegisterServiceImpl implements RegisterService {
             logger.warn("register user fail,user exsist,phone={}", user.getPhone());
             throw new UserExsistException("手机号已经注册");
         }
-        //加密密码
+      /*  //加密密码
         int salt = genSalt();
         user.setSalt(salt);
         String password = user.getPassword();//调用者确保已经md5过了
         password = StringUtils.md5(salt + "#" + password);
-        user.setPassword(password);
+        user.setPassword(password);*/
         Calendar calendar=Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         user.setCreateTime(calendar.getTime());

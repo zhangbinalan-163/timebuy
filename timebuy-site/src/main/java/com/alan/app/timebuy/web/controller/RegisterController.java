@@ -4,6 +4,8 @@ import com.alan.app.timebuy.common.exception.InvalidParamException;
 import com.alan.app.timebuy.common.exception.TimeBuyException;
 import com.alan.app.timebuy.common.exception.UserExsistException;
 import com.alan.app.timebuy.common.util.StringUtils;
+import com.alan.app.timebuy.entity.ClientType;
+import com.alan.app.timebuy.entity.DeviceInfo;
 import com.alan.app.timebuy.entity.User;
 import com.alan.app.timebuy.service.RegisterService;
 import com.alan.app.timebuy.service.SidService;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import com.alan.app.timebuy.entity.ClientType;
+import com.alan.app.timebuy.entity.ClientVersion;
 
 /**
  * 注册相关功能控制器
@@ -57,9 +61,6 @@ public class RegisterController extends BaseController{
            return createFailResponse(2002,null);
         }
 
-        /*if(userService.getUserByPhone(phone).getUserId() != null){
-            return  createFailResponse(2002,null);
-        }*/
         //检查参数
         if(!StringUtils.isLegalMobile(phone)){
             //手机号格式检查
@@ -100,6 +101,156 @@ public class RegisterController extends BaseController{
         }
         //执行业务
         registerService.sendUserRegSms(phone);
+        //生成响应信息
+        return createSuccessResponse(null);
+    }
+
+    /**
+     * 用户注册
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    public String RegLogin(HttpServletRequest httpRequest) throws Exception {
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        String phone = request.getString("phone");
+        String userName = request.getString("user");
+        //获取设备信息
+        DeviceInfo deviceInfo = new DeviceInfo();
+        if(request.getString("clientType").equalsIgnoreCase("10")) {
+            deviceInfo.setClientType(ClientType.ANDROID_APP);
+            deviceInfo.setDeviceId(request.getString("deviceId"));
+            ClientVersion clientVersion = new ClientVersion();
+            clientVersion.setMajor(Integer.parseInt(request.getString("major")));
+            clientVersion.setMinor(Integer.parseInt(request.getString("minor")));
+            clientVersion.setRevision(Integer.parseInt(request.getString("revision")));
+            deviceInfo.setClientVersion(clientVersion);
+            request.setDeviceInfo(deviceInfo);
+        }else if(request.getString("clientType").equalsIgnoreCase("20")){
+            deviceInfo.setClientType(ClientType.IPHONE_APP);
+            deviceInfo.setDeviceId(request.getString("deviceId"));
+            ClientVersion clientVersion = new ClientVersion();
+            clientVersion.setMajor(Integer.parseInt(request.getString("major")));
+            clientVersion.setMinor(Integer.parseInt(request.getString("minor")));
+            clientVersion.setRevision(Integer.parseInt(request.getString("revision")));
+            deviceInfo.setClientVersion(clientVersion);
+            request.setDeviceInfo(deviceInfo);
+        }
+        String source = request
+        //检查参数
+        if(!StringUtils.isLegalMobile(phone)){
+            throw new InvalidParamException("该手机号不支持");
+        }
+        //执行业务
+        User user  = new User();
+        user.setPhone(phone);
+        user.setUserNameQQ(qq);
+        registerService.registerUser(user);
+        //生成响应信息
+        return createSuccessResponse(null);
+    }
+
+    /**
+     * 用户新浪号注册
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/sina")
+    @ResponseBody
+    public String RegSina(HttpServletRequest httpRequest) throws Exception {
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        String phone = request.getString("phone");
+        String sina = request.getString("sina");
+        //检查参数
+        if(!StringUtils.isLegalMobile(phone)){
+            throw new InvalidParamException("该手机号不支持");
+        }
+        //执行业务
+        User user  = new User();
+        user.setPhone(phone);
+        user.setUserNameSina(sina);
+        registerService.registerUser(user);
+        //生成响应信息
+        return createSuccessResponse(null);
+    }
+
+    /**
+     * 用户微信号注册
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/wx")
+    @ResponseBody
+    public String RegWx(HttpServletRequest httpRequest) throws Exception {
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        String phone = request.getString("phone");
+        String wx = request.getString("wx");
+        //检查参数
+        if(!StringUtils.isLegalMobile(phone)){
+            throw new InvalidParamException("该手机号不支持");
+        }
+        //执行业务
+        User user  = new User();
+        user.setPhone(phone);
+        user.setUserNameWx(wx);
+        registerService.registerUser(user);
+        //生成响应信息
+        return createSuccessResponse(null);
+    }
+
+    /**
+     * 用户支付宝号注册
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/zfb")
+    @ResponseBody
+    public String RegZfb(HttpServletRequest httpRequest) throws Exception {
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        String phone = request.getString("phone");
+        String zfb = request.getString("zfb");
+        //检查参数
+        if(!StringUtils.isLegalMobile(phone)){
+            throw new InvalidParamException("该手机号不支持");
+        }
+        //执行业务
+        User user  = new User();
+        user.setPhone(phone);
+        user.setUserNameZfb(zfb);
+        registerService.registerUser(user);
+        //生成响应信息
+        return createSuccessResponse(null);
+    }
+
+    /**
+     * 用户手机号注册
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/phone")
+    @ResponseBody
+    public String RegPhone(HttpServletRequest httpRequest) throws Exception {
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        String phone = request.getString("phone");
+        //检查参数
+        if(!StringUtils.isLegalMobile(phone)){
+            throw new InvalidParamException("该手机号不支持");
+        }
+        //执行业务
+        User user = new User();
+        user.setPhone(phone);
+        registerService.registerUser(user);
         //生成响应信息
         return createSuccessResponse(null);
     }

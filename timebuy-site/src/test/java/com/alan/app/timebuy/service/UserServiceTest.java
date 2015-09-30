@@ -46,7 +46,7 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
             List<User>  a = userService.getAllUser();
             System.out.print("===================================="+"\n");
             System.out.print(a.size()+"\n");
-            System.out.print("===================================="+"\n");
+            System.out.print("====================================" + "\n");
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -66,4 +66,5 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
             fail();
         }
     }
+
 }

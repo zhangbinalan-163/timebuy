@@ -21,6 +21,38 @@ public interface UserDao {
     User getByPhone(String phone) throws TimeBuyException;
 
     /**
+     * 根据QQ查询账号
+     * @param user
+     * @return
+     * @throws SQLException
+     */
+    User getByQQ(User user) throws TimeBuyException;
+
+    /**
+     * 根据新浪查询账号
+     * @param user
+     * @return
+     * @throws SQLException
+     */
+    User getBySina(User user) throws TimeBuyException;
+
+    /**
+     * 根据微信查询账号
+     * @param user
+     * @return
+     * @throws SQLException
+     */
+    User getByWx(User user) throws TimeBuyException;
+
+    /**
+     * 根据支付宝查询账号
+     * @param user
+     * @return
+     * @throws SQLException
+     */
+    User getByZfb(User user) throws TimeBuyException;
+
+    /**
      * 根据userId查询账号
      * @param userId
      * @return

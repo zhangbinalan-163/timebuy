@@ -9,7 +9,6 @@ public class News{
 	private Date starttime;//开始时间
 	private Date finishtime;//结束时间
 	private String phone;//手机号
-	private String label;//标签
 	private Float money;//金额
 	private String coordname;//坐标名称
 	private Double coordx;//坐标x
@@ -17,8 +16,7 @@ public class News{
 	private String pic;//图片名称
 	private int userid;//用户主键
 	private int acceptUserid;//接受消息用户主键
-	private int kind;//标签种类 1求助 2跑腿 3组局 4公益 5自定义
-	private String other;//自定义标签
+	private int label;//标签种类 1求助 2跑腿 3组局 4公益
 	private int praise;//点赞数
 
 	public int getPraise() {
@@ -27,22 +25,6 @@ public class News{
 
 	public void setPraise(int praise) {
 		this.praise = praise;
-	}
-
-	public int getKind() {
-		return kind;
-	}
-
-	public void setKind(int kind) {
-		this.kind = kind;
-	}
-
-	public String getOther() {
-		return other;
-	}
-
-	public void setOther(String other) {
-		this.other = other;
 	}
 
 	public int getAcceptUserid() {
@@ -109,11 +91,11 @@ public class News{
 		this.phone = phone;
 	}
 
-	public String getLabel() {
-		return this.label;
+	public int getLabel() {
+		return label;
 	}
 
-	public void setLabel(String label) {
+	public void setLabel(int label) {
 		this.label = label;
 	}
 

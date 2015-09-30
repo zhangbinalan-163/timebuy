@@ -50,7 +50,7 @@ public class NewsControllerTest {
                         .param("news", "123")
                         .param("starttime", "2011-1-1 10:11")
                         .param("finishtime", "2022-1-1 10:11")
-                        .param("label", "我我")
+                        .param("label", "1")
                         .param("money", "18")
                         .param("coordname", "18767122228")
                         .param("coordx", "1876")
