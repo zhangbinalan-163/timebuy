@@ -59,7 +59,7 @@ public interface NewsService {
      * 所有求助消息
      * @throws SQLException
      */
-    List<News> help() throws TimeBuyException;
+    List<News> accompany() throws TimeBuyException;
 
     /**
      * 所有跑腿消息
@@ -71,7 +71,7 @@ public interface NewsService {
      * 所有组局消息
      * @throws SQLException
      */
-    List<News> group() throws TimeBuyException;
+    List<News> study() throws TimeBuyException;
 
     /**
      * 所有公益消息

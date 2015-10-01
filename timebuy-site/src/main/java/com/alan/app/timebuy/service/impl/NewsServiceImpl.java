@@ -84,8 +84,8 @@ public class NewsServiceImpl implements NewsService{
      * 所有求助消息
      * @throws TimeBuyException
      */
-    public List<News> help() throws TimeBuyException{
-        return newsDao.help();
+    public List<News> accompany() throws TimeBuyException{
+        return newsDao.accompany();
     }
 
     /**
@@ -100,8 +100,8 @@ public class NewsServiceImpl implements NewsService{
      * 所有组局消息
      * @throws TimeBuyException
      */
-    public List<News> group() throws TimeBuyException{
-        return newsDao.group();
+    public List<News> study() throws TimeBuyException{
+        return newsDao.study();
     }
 
     /**

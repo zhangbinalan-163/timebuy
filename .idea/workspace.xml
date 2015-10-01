@@ -36,107 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/UserMapper.xml">
+      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/NewsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding>
-                <marker date="1443614251725" expanded="true" signature="1423:1801" placeholder="INSERT INTO ..." />
-                <marker date="1443614251725" expanded="true" signature="1899:2964" placeholder="update user_..." />
-                <marker date="1443614251725" expanded="true" signature="3066:3288" placeholder="update passw..." />
-                <marker date="1443614251725" expanded="true" signature="3386:3463" placeholder="delete from ..." />
-                <marker date="1443614251725" expanded="true" signature="3557:3633" placeholder="select * fro..where..." />
-                <marker date="1443614251725" expanded="true" signature="3750:3838" placeholder="select * fro..where..." />
-                <marker date="1443614251725" expanded="true" signature="3957:4049" placeholder="select * fro..where..." />
-                <marker date="1443614251725" expanded="true" signature="4166:4254" placeholder="select * fro..where..." />
-                <marker date="1443614251725" expanded="true" signature="4372:4462" placeholder="select * fro..where..." />
-                <marker date="1443614251725" expanded="true" signature="4550:4629" placeholder="select * fro..where..." />
-                <marker date="1443614251725" expanded="true" signature="4696:4771" placeholder="select * fro..order..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-              <folding>
-                <element signature="e#1518#1519#0" expanded="true" />
-                <element signature="e#1547#1548#0" expanded="true" />
-                <element signature="e#1656#1657#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-                <element signature="e#1794#1795#0" expanded="true" />
-                <element signature="e#1825#1826#0" expanded="true" />
-                <element signature="e#1873#1874#0" expanded="true" />
-                <element signature="e#1913#1914#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/RegisterController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59969324">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Request.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/vo/Request.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/DeviceInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding>
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientVersion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/ClientVersion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SidInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/SidInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/ClientType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="35" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="35" />
+            <state vertical-scroll-proportion="4.9970546">
+              <caret line="250" column="15" selection-start-line="250" selection-start-column="15" selection-end-line="250" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -628,8 +532,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/service/RegisterServiceTest.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/filter/HeaderFilter.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/resources/springContext-core.xml" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/BaseController.java" />
@@ -654,31 +556,33 @@
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/common/util/DateUtils.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/CommentControllerTest.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/NewsDao.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/NewsMapper.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/NewsDaoImpl.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/NewsService.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/NewsServiceImpl.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/service/NewsServiceTest.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/common/util/Page.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/common/util/PageUtils.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/UserService.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/service/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/News.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/NewsController.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/NewsControllerTest.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/NewsMapper.xml" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/RegisterServiceImpl.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/vo/Request.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/SidInfo.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/UserService.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/SidMapper.xml" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/RegisterControllerTest.java" />
         <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/User.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/UserInfoController.java" />
-        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/RegisterController.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/News.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/NewsMapper.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/NewsDao.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/NewsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/NewsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/NewsService.java" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/NewsMapper.xml" />
+        <option value="$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/NewsController.java" />
       </list>
     </option>
   </component>
@@ -706,7 +610,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -757,106 +661,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Production">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="timebuy-site">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="timebuy-site">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/test/java">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/alan/app/timebuy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="web/controller">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="timebuy-site">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="timebuy-site">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/test/java">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/alan/app/timebuy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="service">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="timebuy-site">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="timebuy-site">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/test/java">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/alan/app/timebuy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dao">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -906,6 +710,52 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timebuy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timebuy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timebuy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timebuy-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timebuy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -926,32 +776,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy-site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1057,43 +881,109 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Production">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+          </PATH>
+        </subPane>
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy-site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="timebuy-site">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="timebuy-site">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="src/test/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="com/alan/app/timebuy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timebuy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="web/controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="timebuy-site">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="timebuy-site">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/test/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/alan/app/timebuy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="service">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="timebuy-site">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="timebuy-site">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/test/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/alan/app/timebuy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dao">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timebuy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1129,59 +1019,7 @@
       <recent name="com.alan.app.timebuy.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RegisterControllerTest.RegPhone">
-    <configuration default="false" name="RegisterControllerTest.RegQQ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.alan.app.timebuy.web.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="timebuy-site" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.alan.app.timebuy.web.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.alan.app.timebuy.web.controller.RegisterControllerTest" />
-      <option name="METHOD_NAME" value="RegQQ" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="RegisterControllerTest.RegSina" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.alan.app.timebuy.web.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="timebuy-site" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.alan.app.timebuy.web.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.alan.app.timebuy.web.controller.RegisterControllerTest" />
-      <option name="METHOD_NAME" value="RegSina" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NewsControllerTest.addNews">
     <configuration default="false" name="RegisterControllerTest.RegWx" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1247,6 +1085,58 @@
       <option name="PACKAGE_NAME" value="com.alan.app.timebuy.web.controller" />
       <option name="MAIN_CLASS_NAME" value="com.alan.app.timebuy.web.controller.RegisterControllerTest" />
       <option name="METHOD_NAME" value="RegPhone" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RegisterControllerTest.sendUserPhone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.alan.app.timebuy.web.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="timebuy-site" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.alan.app.timebuy.web.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.alan.app.timebuy.web.controller.RegisterControllerTest" />
+      <option name="METHOD_NAME" value="sendUserPhone" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NewsControllerTest.addNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.alan.app.timebuy.web.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="timebuy-site" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.alan.app.timebuy.web.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.alan.app.timebuy.web.controller.NewsControllerTest" />
+      <option name="METHOD_NAME" value="addNews" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1530,6 +1420,32 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="false" name="RegisterControllerTest.sendUserOther" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.alan.app.timebuy.web.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="timebuy-site" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.alan.app.timebuy.web.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.alan.app.timebuy.web.controller.RegisterControllerTest" />
+      <option name="METHOD_NAME" value="sendUserOther" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="false" name="RegisterControllerTest.sendLoginUserTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1800,25 +1716,26 @@
         </option>
       </method>
     </configuration>
-    <list size="10">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.sendLoginUserTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.UserServiceTest.updateTest" />
-      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.test-2" />
-      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.test" />
-      <item index="4" class="java.lang.String" itemvalue="Tomcat Server.testNew" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegQQ" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegSina" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegWx" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegZfb" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegPhone" />
+    <list size="11">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.sendUserOther" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.sendLoginUserTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceTest.updateTest" />
+      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.test-2" />
+      <item index="4" class="java.lang.String" itemvalue="Tomcat Server.test" />
+      <item index="5" class="java.lang.String" itemvalue="Tomcat Server.testNew" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegWx" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegZfb" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegPhone" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.sendUserPhone" />
+      <item index="10" class="java.lang.String" itemvalue="JUnit.NewsControllerTest.addNews" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegPhone" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegZfb" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegWx" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegSina" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegQQ" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NewsControllerTest.addNews" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.sendUserPhone" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegPhone" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegZfb" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterControllerTest.RegWx" />
       </list>
     </recent_temporary>
   </component>
@@ -1873,14 +1790,15 @@
       <workItem from="1443436537324" duration="10112000" />
       <workItem from="1443520566543" duration="12787000" />
       <workItem from="1443605078092" duration="10978000" />
+      <workItem from="1443671453233" duration="18829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300296000" />
+    <option name="totallyTimeSpent" value="319125000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1892,11 +1810,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28164557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25316456" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21764092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1936,34 +1854,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/CommentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/CommentDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5467197">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/service/CommentServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6936937">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8778626">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/CommentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.86466163">
@@ -2058,13 +1948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/common/util/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44940153">
-          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/springContext-core.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.5">
@@ -2078,21 +1961,6 @@
         <state vertical-scroll-proportion="1.6262627">
           <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.073993474">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7758433">
-          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -2127,104 +1995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/News.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#1539#1540#0" expanded="true" />
-            <element signature="e#1563#1564#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1653#1654#0" expanded="true" />
-            <element signature="e#1672#1673#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1733#1734#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/NewsControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6200378">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/NewsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1304348">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/NewsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12665406">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/NewsDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22306238">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/NewsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40642723">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/NewsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44990548">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/NewsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40642723">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/NewsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0599415">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/RegisterServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2241,82 +2011,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/RegisterControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/ClientVersion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="237" column="29" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
-          <folding>
-            <element signature="e#1590#1591#0" expanded="true" />
-            <element signature="e#1681#1682#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3067485">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="e#1518#1519#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
-            <element signature="e#1794#1795#0" expanded="true" />
-            <element signature="e#1825#1826#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1913#1914#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.409509">
-          <caret line="142" column="35" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <marker date="1443614251725" expanded="true" signature="1423:1801" placeholder="INSERT INTO ..." />
-            <marker date="1443614251725" expanded="true" signature="1899:2964" placeholder="update user_..." />
-            <marker date="1443614251725" expanded="true" signature="3066:3288" placeholder="update passw..." />
-            <marker date="1443614251725" expanded="true" signature="3386:3463" placeholder="delete from ..." />
-            <marker date="1443614251725" expanded="true" signature="3557:3633" placeholder="select * fro..where..." />
-            <marker date="1443614251725" expanded="true" signature="3750:3838" placeholder="select * fro..where..." />
-            <marker date="1443614251725" expanded="true" signature="3957:4049" placeholder="select * fro..where..." />
-            <marker date="1443614251725" expanded="true" signature="4166:4254" placeholder="select * fro..where..." />
-            <marker date="1443614251725" expanded="true" signature="4372:4462" placeholder="select * fro..where..." />
-            <marker date="1443614251725" expanded="true" signature="4550:4629" placeholder="select * fro..where..." />
-            <marker date="1443614251725" expanded="true" signature="4696:4771" placeholder="select * fro..order..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/SidService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71779144">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/SidInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -2324,7 +2022,7 @@
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/ClientType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="35" />
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -2332,37 +2030,264 @@
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/vo/Request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="22" />
-          <folding />
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="e#964#965#0" expanded="false" />
+            <element signature="e#990#991#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/DeviceInfo.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15016322">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/SidService.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/SidInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding>
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="false" />
+            <element signature="e#2055#2056#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/ClientVersion.java">
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="26" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/SidMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/SidDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/SidMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding>
+            <marker date="1443683820277" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1443683820277" expanded="true" signature="-1:-1" placeholder="update statu..." />
+            <marker date="1443683820277" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1443683820277" expanded="true" signature="-1:-1" placeholder="select * fro..where..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/SidServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/RegisterControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8120915">
+          <caret line="148" column="71" selection-start-line="148" selection-start-column="71" selection-end-line="148" selection-end-column="71" />
+          <folding>
+            <element signature="e#1590#1591#0" expanded="false" />
+            <element signature="e#1681#1682#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24836601">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="update user_..." />
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="update passw..." />
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="select * fro..where..." />
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="select * fro..where..." />
+            <marker date="1443683019736" expanded="true" signature="-1:-1" placeholder="select * fro..order..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1175549">
+          <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59969324">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.45924765">
+          <caret line="231" column="32" selection-start-line="231" selection-start-column="32" selection-end-line="231" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/common/util/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/test/java/com/alan/app/timebuy/web/controller/NewsControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/entity/News.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/mapper/NewsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/NewsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/dao/impl/NewsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.788873">
+          <caret line="102" column="35" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/impl/NewsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="31" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/service/NewsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5406562">
+          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/resources/com/alan/app/timebuy/dao/mapper/NewsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60627675">
+          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..ORDER..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="UPDATE accep..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..WHERE..." />
+            <marker date="1443689795827" expanded="true" signature="-1:-1" placeholder="UPDATE prais..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timebuy-site/src/main/java/com/alan/app/timebuy/web/controller/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.9970546">
+          <caret line="250" column="15" selection-start-line="250" selection-start-column="15" selection-end-line="250" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

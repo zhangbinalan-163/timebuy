@@ -80,9 +80,9 @@ public class NewsDaoImpl implements NewsDao{
     }
 
     @Override
-    public List<News> help() throws TimeBuyException{
+    public List<News> accompany() throws TimeBuyException{
         try {
-            return newsMapper.help();
+            return newsMapper.accompany();
         }catch (Exception e){
             throw new TimeBuyException("获取求助信息失败",e);
         }
@@ -98,9 +98,9 @@ public class NewsDaoImpl implements NewsDao{
     }
 
     @Override
-    public List<News> group() throws TimeBuyException{
+    public List<News> study() throws TimeBuyException{
         try {
-            return newsMapper.group();
+            return newsMapper.study();
         }catch (Exception e){
             throw new TimeBuyException("获取组局信息失败",e);
         }

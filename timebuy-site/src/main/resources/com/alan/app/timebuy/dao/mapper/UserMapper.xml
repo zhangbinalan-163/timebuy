@@ -77,30 +77,6 @@
         where phone=#{phone}
     </select>
 
-    <select id="getByQQ"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_qq=#{userNameQQ}
-    </select>
-
-    <select id="getBySina"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_sina=#{userNameSina}
-    </select>
-
-    <select id="getByWx"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_wx=#{userNameWx}
-    </select>
-
-    <select id="getByZfb"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_zfb=#{userNameZfb}
-    </select>
-
     <select id="getById"  parameterType="int" resultMap="DATA">
         select * from
         <include refid="TABLE" />

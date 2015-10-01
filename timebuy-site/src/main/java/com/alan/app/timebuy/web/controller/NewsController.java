@@ -97,6 +97,8 @@ public class NewsController extends BaseController{
         news1.setPic(picture.toString());
         news1.setUserid(userid);
         news1.setPraise(0);
+        news1.setShare(0);
+        news1.setTag(0);
 
         newsService.addNews(news1);
         return createSuccessResponse("1000",null);
@@ -234,7 +236,7 @@ public class NewsController extends BaseController{
     }
 
     /**
-     * 所有求助消息
+     * 所有陪伴消息
      * @param httpRequest
      * @return
      * @throws Exception
@@ -243,7 +245,7 @@ public class NewsController extends BaseController{
     @ResponseBody
     public String help(HttpServletRequest httpRequest) throws Exception{
          Request request = getRequest(httpRequest);
-         List<News> l = newsService.help();
+         List<News> l = newsService.accompany();
         if(l.size()==0){
             return createFailResponse(2006,null);
         }else {
@@ -270,7 +272,7 @@ public class NewsController extends BaseController{
     }
 
     /**
-     * 所有组局消息
+     * 所有学霸消息
      * @param httpRequest
      * @return
      * @throws Exception
@@ -279,7 +281,7 @@ public class NewsController extends BaseController{
     @ResponseBody
     public String group(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
-        List<News> l = newsService.group();
+        List<News> l = newsService.study();
         if(l.size()==0){
             return createFailResponse(2006,null);
         }else {

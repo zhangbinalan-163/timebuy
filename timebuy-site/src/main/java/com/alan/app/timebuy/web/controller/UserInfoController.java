@@ -60,7 +60,7 @@ public class UserInfoController extends BaseController{
      * @param httpRequest
      * @return
      * @throws Exception
-     */
+     *//*
     @RequestMapping(value = "/QQ")
     @ResponseBody
     public String userInfoByQQ(HttpServletRequest httpRequest) throws Exception{
@@ -82,82 +82,7 @@ public class UserInfoController extends BaseController{
             user.setPhone(phone);
             return createSuccessResponse(user);
         }
-    }
-
-    /**
-     * 根据新浪获取用户信息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/sina")
-    @ResponseBody
-    public String userInfoBySina(HttpServletRequest httpRequest) throws Exception{
-        Request request = getRequest(httpRequest);
-        //获取相关业务参数
-        String sina = request.getString("sina");
-        String phone = request.getString("phone");
-        //执行获取资料
-        User user1 = new User();
-        user1.setUserNameSina(sina);
-        User user= userService.getUserBySina(user1);
-        if(user.getUserId() == null || user.getUserId().equals("")){
-            return createFailResponse(2004,null);
-        }else {
-            user.setPhone(phone);
-            return createSuccessResponse(user);
-        }
-    }
-
-    /**
-     * 根据微信获取用户信息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/wx")
-    @ResponseBody
-    public String userInfoByWx(HttpServletRequest httpRequest) throws Exception{
-        Request request = getRequest(httpRequest);
-        //获取相关业务参数
-        String wx = request.getString("wx");
-        String phone = request.getString("phone");
-        //执行获取资料
-        User user1 = new User();
-        user1.setUserNameWx(wx);
-        User user= userService.getUserByWx(user1);
-        if(user.getUserId() == null || user.getUserId().equals("")){
-            return createFailResponse(2004,null);
-        }else {
-            user.setPhone(phone);
-            return createSuccessResponse(user);
-        }
-    }
-
-    /**
-     * 根据支付宝获取用户信息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/zfb")
-    @ResponseBody
-    public String userInfoByZfb(HttpServletRequest httpRequest) throws Exception{
-        Request request = getRequest(httpRequest);
-        //获取相关业务参数
-        String zfb = request.getString("zfb");
-        String phone = request.getString("phone");
-        //执行获取资料
-        User user1 = new User();
-        user1.setUserNameZfb(zfb);
-        User user= userService.getUserByZfb(user1);
-        if(user.getUserId() == null || user.getUserId().equals("")){
-            return createFailResponse(2004,null);
-        }else {
-            user.setPhone(phone);
-            return createSuccessResponse(user);
-        }
-    }
+    }*/
 
     /**
      * 用户信息修改响应方法

@@ -40,7 +40,7 @@ public class User {
     private String signature;//个性签名
     private Integer status=STATUS_NORMAL;//用户的状态
     private Integer nearby = NEARBY_VISIBLE;
-    private Integer source=SOURCE_APP;//账号的注册来源 1手机号注册 2第三方QQ 3第三方微信 4第三方支付宝
+    private Integer source=SOURCE_APP;//账号的注册来源
     private float money;//钱包
 
     public Long getUserId() {

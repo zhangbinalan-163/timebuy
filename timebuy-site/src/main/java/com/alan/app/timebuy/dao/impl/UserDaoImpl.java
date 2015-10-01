@@ -31,42 +31,6 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public User getByQQ(User user) throws TimeBuyException {
-        try {
-            return userMapper.getByQQ(user);
-        } catch (Exception e) {
-            throw new TimeBuyException("查询用户数据异常",e);
-        }
-    }
-
-    @Override
-    public User getBySina(User user) throws TimeBuyException {
-        try {
-            return userMapper.getBySina(user);
-        } catch (Exception e) {
-            throw new TimeBuyException("查询用户数据异常",e);
-        }
-    }
-
-    @Override
-    public User getByWx(User user) throws TimeBuyException {
-        try {
-            return userMapper.getByWx(user);
-        } catch (Exception e) {
-            throw new TimeBuyException("查询用户数据异常",e);
-        }
-    }
-    @Override
-    public User getByZfb(User user) throws TimeBuyException {
-        try {
-            return userMapper.getByZfb(user);
-        } catch (Exception e) {
-            throw new TimeBuyException("查询用户数据异常",e);
-        }
-    }
-
-
-    @Override
     public User getById(int userId) throws TimeBuyException {
         try {
             return userMapper.getById(userId);

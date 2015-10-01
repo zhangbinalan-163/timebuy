@@ -21,38 +21,6 @@ public interface UserService {
     User getUserByPhone(String phone) throws TimeBuyException;
 
     /**
-     * 根据QQ获取用户信息
-     * @param user
-     * @return
-     * @throws TimeBuyException
-     */
-    User getUserByQQ(User user) throws TimeBuyException;
-
-    /**
-     * 根据新浪获取用户信息
-     * @param user
-     * @return
-     * @throws TimeBuyException
-     */
-    User getUserBySina(User user) throws TimeBuyException;
-
-    /**
-     * 根据微信获取用户信息
-     * @param user
-     * @return
-     * @throws TimeBuyException
-     */
-    User getUserByWx(User user) throws TimeBuyException;
-
-    /**
-     * 根据手机号获取用户信息
-     * @param user
-     * @return
-     * @throws TimeBuyException
-     */
-    User getUserByZfb(User user) throws TimeBuyException;
-
-    /**
      * 根据userId获取用户信息
      * @param userId
      * @return

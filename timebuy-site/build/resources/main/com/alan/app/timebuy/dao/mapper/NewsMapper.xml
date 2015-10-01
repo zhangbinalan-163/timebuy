@@ -21,12 +21,14 @@
         <result property="userid" column="userid"/>
         <result property="kind" column="kind"/>
         <result property="praise" column="praise"/>
+        <result property="share" column="share"/>
+        <result property="tag" column="tag"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.News" useGeneratedKeys="true" keyColumn="id" keyProperty="newsId">
         INSERT INTO <include refid="TABLE"/>
-        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid,praise)
-        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid},#{praise})
+        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid,praise,share,tag)
+        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid},#{praise},#{share},#{tag})
     </insert>
 
     <select id="getNewsById" parameterType="int" resultMap="DATA">

@@ -58,7 +58,7 @@ public interface NewsMapper {
      * 所有求助消息
      * @throws SQLException
      */
-    List<News> help() throws Exception;
+    List<News> accompany() throws Exception;
 
     /**
      * 所有跑腿消息
@@ -70,7 +70,7 @@ public interface NewsMapper {
      * 所有组局消息
      * @throws SQLException
      */
-    List<News> group() throws Exception;
+    List<News> study() throws Exception;
 
     /**
      * 所有公益消息

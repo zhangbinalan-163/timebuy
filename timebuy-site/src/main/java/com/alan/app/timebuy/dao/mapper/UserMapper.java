@@ -28,37 +28,6 @@ public interface UserMapper {
     User getById(int userId) throws Exception;
 
     /**
-     * 根据QQ查询账号
-     * @param user
-     * @return
-     * @throws SQLException
-     */
-    User getByQQ(User user) throws Exception;
-
-    /**
-     * 根据新浪查询账号
-     * @param user
-     * @return
-     * @throws SQLException
-     */
-    User getBySina(User user) throws Exception;
-
-    /**
-     * 根据微信查询账号
-     * @param user
-     * @return
-     * @throws SQLException
-     */
-    User getByWx(User user) throws Exception;
-    /**
-     * 根据支付宝查询账号
-     * @param user
-     * @return
-     * @throws SQLException
-     */
-    User getByZfb(User user) throws Exception;
-
-    /**
      * 插入账号
      * @param user
      * @throws SQLException

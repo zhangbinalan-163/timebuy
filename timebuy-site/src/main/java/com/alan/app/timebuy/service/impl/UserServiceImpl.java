@@ -51,66 +51,6 @@ public class UserServiceImpl implements UserService{
         return userInfo;
     }
 
-    @Override
-    public User getUserByQQ(User user) throws TimeBuyException {
-        //先从缓存读取
-        User userInfo=getUserFromCache(CACHE_TYPE_QQ, user.getUserNameQQ());
-        if(userInfo!=null){
-            return userInfo;
-        }
-        userInfo = userDao.getByQQ(user);
-        if(userInfo!=null){
-            //设置缓存
-            setUserInCache(CACHE_TYPE_QQ,user.getUserNameQQ(),userInfo);
-        }
-        return userInfo;
-    }
-
-    @Override
-    public User getUserBySina(User user) throws TimeBuyException {
-        //先从缓存读取
-        User userInfo=getUserFromCache(CACHE_TYPE_SINA, user.getUserNameSina());
-        if(userInfo!=null){
-            return userInfo;
-        }
-        userInfo = userDao.getBySina(user);
-        if(userInfo!=null){
-            //设置缓存
-            setUserInCache(CACHE_TYPE_SINA,user.getUserNameSina(),userInfo);
-        }
-        return userInfo;
-    }
-
-    @Override
-    public User getUserByWx(User user) throws TimeBuyException {
-        //先从缓存读取
-        User userInfo=getUserFromCache(CACHE_TYPE_WX, user.getUserNameWx());
-        if(userInfo!=null){
-            return userInfo;
-        }
-        userInfo = userDao.getByWx(user);
-        if(userInfo!=null){
-            //设置缓存
-            setUserInCache(CACHE_TYPE_WX,user.getUserNameWx(),userInfo);
-        }
-        return userInfo;
-    }
-
-    @Override
-    public User getUserByZfb(User user) throws TimeBuyException {
-        //先从缓存读取
-        User userInfo=getUserFromCache(CACHE_TYPE_ZFB, user.getUserNameZfb());
-        if(userInfo!=null){
-            return userInfo;
-        }
-        userInfo = userDao.getByZfb(user);
-        if(userInfo!=null){
-            //设置缓存
-            setUserInCache(CACHE_TYPE_ZFB,user.getUserNameWx(),userInfo);
-        }
-        return userInfo;
-    }
-
     /**
      * 根据制定key从缓存获取user信息
      * @param keyType

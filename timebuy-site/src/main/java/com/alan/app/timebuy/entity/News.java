@@ -16,8 +16,26 @@ public class News{
 	private String pic;//图片名称
 	private int userid;//用户主键
 	private int acceptUserid;//接受消息用户主键
-	private int label;//标签种类 1求助 2跑腿 3组局 4公益
+	private int label;//标签种类 1跑腿 2陪我 3学霸 4公益
 	private int praise;//点赞数
+	private int share;//分享次数
+	private int tag;//等待中0；进行中1；已完成2；申诉中3；已取消4
+
+	public int getShare() {
+		return share;
+	}
+
+	public void setShare(int share) {
+		this.share = share;
+	}
+
+	public int getTag() {
+		return tag;
+	}
+
+	public void setTag(int tag) {
+		this.tag = tag;
+	}
 
 	public int getPraise() {
 		return praise;

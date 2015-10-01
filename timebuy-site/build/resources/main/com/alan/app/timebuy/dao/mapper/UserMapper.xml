@@ -8,10 +8,7 @@
 
     <resultMap id="DATA" type="com.alan.app.timebuy.entity.User">
         <id property="userId" column="user_id" />
-        <result property="userNameQQ" column="user_name_qq"/>
-        <result property="userNameSina" column="user_name_sina"/>
-        <result property="userNameWx" column="user_name_wx"/>
-        <result property="userNameZfb" column="user_name_zfb"/>
+        <result property="userName" column="user_name"/>
         <result property="nickName" column="nick_name"/>
         <result property="phone" column="phone"/>
         <result property="sex" column="sex"/>
@@ -31,18 +28,15 @@
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.User" useGeneratedKeys="true" keyColumn="id" keyProperty="userId">
         INSERT INTO <include refid="TABLE"/>
-        (user_name_qq,user_name_sina,user_name_wx,user_name_zfb,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status,money)
-        VALUES(#{userNameQQ},#{userNameSina},#{userNameWx},#{userNameZfb},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status},#{money})
+        (user_name,nick_name,phone,sex,birth_day,head_icon,profession,address,password,salt,create_time,update_time,signature,source,status,money)
+        VALUES(#{userName},#{nickName},#{phone},#{sex},#{birthDay},#{headIcon},#{profession},#{address},#{password},#{salt},#{createTime},#{updateTime},#{signature},#{source},#{status},#{money})
     </insert>
 
     <update id="update" parameterType="com.alan.app.timebuy.entity.User">
         update
         <include refid="TABLE" />
         <set>
-            <if test="userNameQQ != null">user_name_qq=#{userNameQQ},</if>
-            <if test="userNameSina != null">user_name_sina=#{userNameSina},</if>
-            <if test="userNameWx != null">user_name_wx=#{userNameWx},</if>
-            <if test="userNameZfb != null">user_name_zfb=#{userNameZfb},</if>
+            <if test="userName != null">user_name=#{userName},</if>
             <if test="nickName != null">nick_name=#{nickName},</if>
             <if test="phone != null">phone=#{phone},</if>
             <if test="sex != null">sex=#{sex},</if>
@@ -81,30 +75,6 @@
         select * from
         <include refid="TABLE" />
         where phone=#{phone}
-    </select>
-
-    <select id="getByQQ"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_qq=#{userNameQQ}
-    </select>
-
-    <select id="getBySina"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_sina=#{userNameSina}
-    </select>
-
-    <select id="getByWx"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_wx=#{userNameWx}
-    </select>
-
-    <select id="getByZfb"  parameterType="com.alan.app.timebuy.entity.User" resultMap="DATA">
-        select * from
-        <include refid="TABLE" />
-        where user_name_zfb=#{userNameZfb}
     </select>
 
     <select id="getById"  parameterType="int" resultMap="DATA">
