@@ -36,28 +36,74 @@ public class CommentController extends BaseController{
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/insert")
+    @RequestMapping(value = "/publish")
     @ResponseBody
-    public String addComment(HttpServletRequest httpRequest) throws Exception{
+    public String addCommentPublish(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
         //获取相关业务参数
         int newsId = Integer.parseInt(request.getString("newsId"));
         int userId = Integer.parseInt(request.getString("userId"));
         Date commentTime = DateUtils.StringToDate3(request.getString("commentTime"));
-        String comment = request.getString("comment");
-
+        int speed = request.getInt("speed");
+        int service = request.getInt("service");
+        int doId = request.getInt("doId");
         Comment c = new Comment();
         c.setNewsId(newsId);
         c.setUserId(userId);
         c.setCommentTime(commentTime);
-        c.setComment(comment);
+        c.setSpeed(speed);
+        c.setService(service);
+        c.setKind(0);
+        c.setDoId(doId);
 
         if(newsId==0){
            return createFailResponse(1002,"消息获取失败");
         }else if(userId==0){
            return createFailResponse(1002,"用户信息获取失败");
         }else {
-           commentService.addComment(c);
+           try {
+               commentService.addComment(c);
+           }catch (Exception e){
+               e.printStackTrace();
+           }
+            return  createSuccessResponse("1000",null);
+        }
+    }
+
+    /**
+     * 插入评论接口
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/respond")
+    @ResponseBody
+    public String addCommentRespond(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关业务参数
+        int newsId = Integer.parseInt(request.getString("newsId"));
+        int userId = Integer.parseInt(request.getString("userId"));
+        Date commentTime = DateUtils.StringToDate3(request.getString("commentTime"));
+        int service = request.getInt("service");
+        int doId = request.getInt("doId");
+        Comment c = new Comment();
+        c.setNewsId(newsId);
+        c.setUserId(userId);
+        c.setCommentTime(commentTime);
+        c.setService(service);
+        c.setKind(1);
+        c.setDoId(doId);
+
+        if(newsId==0){
+            return createFailResponse(1002,"消息获取失败");
+        }else if(userId==0){
+            return createFailResponse(1002,"用户信息获取失败");
+        }else {
+            try {
+                commentService.addComment(c);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             return  createSuccessResponse("1000",null);
         }
     }

@@ -10,9 +10,44 @@ public class Comment {
 
     private int commentId;//评论主键
     private int newsId;//消息主键
-    private int userId;//用户主键
+    private int userId;//被评论用户主键
     private Date commentTime;//评论时间
-    private String comment;//评论内容
+    private int speed;//速度,为1-5五个分数
+    private int service;//服务质量 为1-5五个分数
+    private int kind;//评论类型 0发布方评论响应方； 1相反
+    private int doId;//评论人的主键
+
+    public int getDoId() {
+        return doId;
+    }
+
+    public void setDoId(int doId) {
+        this.doId = doId;
+    }
+
+    public int getKind() {
+        return kind;
+    }
+
+    public void setKind(int kind) {
+        this.kind = kind;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getService() {
+        return service;
+    }
+
+    public void setService(int service) {
+        this.service = service;
+    }
 
     public int getCommentId() {
         return commentId;
@@ -46,11 +81,4 @@ public class Comment {
         this.commentTime = commentTime;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 }

@@ -1,6 +1,7 @@
 package com.alan.app.timebuy.web.controller;
 
 import com.alan.app.timebuy.common.exception.InvalidParamException;
+import com.alan.app.timebuy.common.exception.TimeBuyException;
 import com.alan.app.timebuy.common.util.DateUtils;
 import com.alan.app.timebuy.common.util.StringUtils;
 import com.alan.app.timebuy.common.util.Page;
@@ -204,13 +205,16 @@ public class NewsController extends BaseController{
         //获取相关业务参数
         int acceptUserId = Integer.parseInt(request.getString("acceptUserId"));
         int newsid = Integer.parseInt(request.getString("newsId"));
+        Date accepttime = DateUtils.StringToDate3(request.getString("accepttime"));
         if(acceptUserId==0 ||newsid==0 ){
                return createFailResponse(1002, "获取参数失败");
         }
         News news = new News();
         news.setNewsId(newsid);
         news.setAcceptUserid(acceptUserId);
-        newsService.accept(news);
+        news.setAccepttime(accepttime);
+        news.setTag(1);
+        newsService.update(news);
         return createSuccessResponse("1000",null);
     }
 
@@ -305,5 +309,89 @@ public class NewsController extends BaseController{
         }else {
             return createSuccessResponse(l);
         }
+    }
+
+    /**
+     * 取消任务（被接受前）
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/cancel")
+    @ResponseBody
+    public String cancel(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int newsId = request.getInt("newid");
+        News news = new News();
+        news.setNewsId(newsId);
+        news.setTag(4);
+        newsService.update(news);
+        return createSuccessResponse("1000",null);
+    }
+
+    /**
+     * 任务进入延时
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/delay")
+    @ResponseBody
+    public String delay(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int newsId = request.getInt("newsid");
+        News news = new News();
+        news.setNewsId(newsId);
+        news.setTag(5);
+        try{
+            newsService.update(news);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse("1000",null);
+    }
+
+    /**
+     * 确认达成任务
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/finish")
+    @ResponseBody
+    public String finish(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int newsId = request.getInt("newsid");
+        News news = new News();
+        news.setNewsId(newsId);
+        news.setTag(2);
+        try{
+            newsService.update(news);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse("1000",null);
+    }
+
+    /**
+     * 申诉
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/appeal")
+    @ResponseBody
+    public String appeal(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int newsId = request.getInt("newsid");
+        News news = new News();
+        news.setNewsId(newsId);
+        news.setTag(3);
+        try{
+            newsService.update(news);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse("1000",null);
     }
 }

@@ -63,15 +63,6 @@ public class NewsServiceImpl implements NewsService{
     }
 
     /**
-     * 接受消息接口
-     * @param  news
-     * @throws TimeBuyException
-     */
-    public void accept(News news) throws TimeBuyException{
-            newsDao.accept(news);
-    }
-
-    /**
      * 我的日常
      * @param  news
      * @throws TimeBuyException
@@ -119,5 +110,13 @@ public class NewsServiceImpl implements NewsService{
      public void praise(News news) throws TimeBuyException{
         newsDao.praise(news);
      }
+
+    /**
+     * 修改消息
+     * @throws TimeBuyException
+     */
+    public void update(News news) throws TimeBuyException{
+        newsDao.update(news);
+    }
 
 }

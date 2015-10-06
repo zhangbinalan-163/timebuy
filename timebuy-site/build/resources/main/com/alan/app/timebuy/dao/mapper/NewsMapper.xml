@@ -19,16 +19,42 @@
         <result property="coordy" column="coordy"/>
         <result property="pic" column="pic"/>
         <result property="userid" column="userid"/>
-        <result property="kind" column="kind"/>
+        <result property="acceptUserid" column="accept_userid"/>
         <result property="praise" column="praise"/>
         <result property="share" column="share"/>
         <result property="tag" column="tag"/>
+        <result property="accepttime" column="accepttime"/>
     </resultMap>
+
+    <update id="update" parameterType="com.alan.app.timebuy.entity.News">
+        UPDATE
+        <include refid="TABLE"/>
+        <set>
+            <if test="news != null">news=#{news},</if>
+            <if test="starttime != null">starttime=#{starttime},</if>
+            <if test="finishtime != null">finishtime=#{finishtime}</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="label != 0">label=#{label},</if>
+            <if test="money != null">money=#{money},</if>
+            <if test="coordname != null">coordname=#{coordname},</if>
+            <if test="coordx != null">coordx=#{coordx},</if>
+            <if test="coordy != null">coordy=#{coordy},</if>
+            <if test="pic != null">pic=#{pic},</if>
+            <if test="userid != 0">userid=#{userid},</if>
+            <if test="acceptUserid != 0">accept_userid=#{acceptUserid},</if>
+            <if test="praise != 0">praise=#{praise},</if>
+            <if test="share != 0">share=#{share},</if>
+            <if test="tag != 0">tag=#{tag},</if>
+            <if test="accepttime != null">accepttime=#{accepttime}</if>
+            <if test="kind != null">kind = #{kind}</if>
+        </set>
+        WHERE news_id = #{newsId}
+    </update>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.News" useGeneratedKeys="true" keyColumn="id" keyProperty="newsId">
         INSERT INTO <include refid="TABLE"/>
-        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid,praise,share,tag)
-        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid},#{praise},#{share},#{tag})
+        (news_id,news,starttime,finishtime,phone,label,money,coordname,coordx,coordy,pic,userid,accept_userid,praise,share,tag,accepttime,kind)
+        VALUES(#{newsId},#{news},#{starttime},#{finishtime},#{phone},#{label},#{money},#{coordname},#{coordx},#{coordy},#{pic},#{userid},#{acceptUserid},#{praise},#{share},#{tag},#{accepttime},#{kind})
     </insert>
 
     <select id="getNewsById" parameterType="int" resultMap="DATA">
@@ -49,43 +75,34 @@
         WHERE news_id = #{newsId}
     </select>
 
-    <update id="accept" parameterType="com.alan.app.timebuy.entity.News">
-       UPDATE
-       <include refid="TABLE"/>
-        <set>
-              <if test="acceptUserid != null">accept_userid=#{acceptUserid},</if>
-        </set>
-        WHERE news_id = #{newsId}
-    </update>
-
     <select id="scheduleNews" parameterType="com.alan.app.timebuy.entity.News" resultMap="DATA">
        SELECT * FROM
        <include refid="TABLE"/>
         WHERE userid = #{userid} OR accept_userid = #{userid}
     </select>
 
-    <select id="help" resultMap="DATA">
+    <select id="accompany" resultMap="DATA">
         SELECT * FROM
         <include refid="TABLE" />
-        WHERE kind = 13 OR kind = 31 OR kind = 14 OR kind = 41 OR kind = 15 OR kind = 51
+        WHERE label = 2 ORDER BY praise
     </select>
 
     <select id="run" resultMap="DATA">
       SELECT * FROM
       <include refid="TABLE"/>
-      WHERE kind = 23 OR kind = 32 OR kind = 24 OR kind = 42 OR kind = 25 OR kind = 52
+      WHERE label = 1 ORDER BY praise
     </select>
 
-    <select id="group" resultMap="DATA">
+    <select id="study" resultMap="DATA">
        SELECT * FROM
        <include refid="TABLE"/>
-       WHERE kind = 23 OR kind = 23 OR kind = 34 OR kind = 43 OR kind = 35 OR kind = 53 OR kind = 13 OR kind = 31
+       WHERE label = 3 ORDER BY praise
     </select>
 
     <select id="welfare" resultMap="DATA">
        SELECT * FROM
        <include refid="TABLE"/>
-       WHERE kind = 14 OR kind = 41 OR kind = 42 OR kind = 24 OR kind = 43 OR kind = 34 OR kind = 45 OR kind = 54
+       WHERE label = 4 ORDER BY praise
     </select>
 
     <update id="praise" parameterType="com.alan.app.timebuy.entity.News">

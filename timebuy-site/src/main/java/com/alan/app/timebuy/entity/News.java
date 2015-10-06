@@ -19,7 +19,16 @@ public class News{
 	private int label;//标签种类 1跑腿 2陪我 3学霸 4公益
 	private int praise;//点赞数
 	private int share;//分享次数
-	private int tag;//等待中0；进行中1；已完成2；申诉中3；已取消4
+	private int tag;//等待中0；进行中1；已完成2；申诉中3；已取消4；延时中5
+	private Date accepttime;//接受任务时间
+
+	public Date getAccepttime() {
+		return accepttime;
+	}
+
+	public void setAccepttime(Date accepttime) {
+		this.accepttime = accepttime;
+	}
 
 	public int getShare() {
 		return share;

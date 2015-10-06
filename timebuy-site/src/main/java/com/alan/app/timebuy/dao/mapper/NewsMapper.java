@@ -41,13 +41,6 @@ public interface NewsMapper {
     News selectNewsById(int newsId) throws Exception;
 
     /**
-     * 接受消息
-     * @param  news
-     * @throws SQLException
-     */
-    void accept(News news) throws Exception;
-
-    /**
      * 我的日常
      * @param  news
      * @throws SQLException
@@ -83,4 +76,10 @@ public interface NewsMapper {
      * @throws SQLException
      */
     void praise(News news) throws Exception;
+
+    /**
+     * 修改
+     * @throws SQLException
+     */
+    void update(News news) throws Exception;
 }

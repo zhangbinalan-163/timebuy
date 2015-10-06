@@ -42,13 +42,6 @@ public interface NewsService {
     News selectNewsById(int newsId) throws Exception;
 
     /**
-     * 接受消息接口
-     * @param  news
-     * @throws SQLException
-     */
-    void accept(News news) throws Exception;
-
-    /**
      * 我的日常
      * @param  news
      * @throws SQLException
@@ -84,4 +77,10 @@ public interface NewsService {
      * @throws SQLException
      */
     void praise(News news) throws TimeBuyException;
+
+    /**
+     * 修改
+     * @throws SQLException
+     */
+    void update(News news) throws TimeBuyException;
 }

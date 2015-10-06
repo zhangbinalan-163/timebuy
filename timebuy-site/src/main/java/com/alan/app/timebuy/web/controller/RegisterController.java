@@ -129,8 +129,7 @@ public class RegisterController extends BaseController{
         SidInfo sidInfo = new SidInfo();
         String clientVersion = request.getString("clientVersion");
         String did = request.getString("did");
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        Date loginTime = DateUtils.StringToDate3(df.format(new Date()));
+        Date loginTime = DateUtils.StringToDate3(request.getString("loginTime"));
         if(request.getInt("clientType")==10) {
             /*deviceInfo.setClientType(ClientType.ANDROID_APP);
             deviceInfo.setDeviceId(request.getString("deviceId"));
@@ -198,8 +197,7 @@ public class RegisterController extends BaseController{
         SidInfo sidInfo = new SidInfo();
         String clientVersion = request.getString("clientVersion");
         String did = request.getString("did");
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        Date loginTime = DateUtils.StringToDate3(df.format(new Date()));
+        Date loginTime = DateUtils.StringToDate3(request.getString("loginTime"));
         if(request.getInt("clientType")==10) {
             /*deviceInfo.setClientType(ClientType.ANDROID_APP);
             deviceInfo.setDeviceId(request.getString("deviceId"));

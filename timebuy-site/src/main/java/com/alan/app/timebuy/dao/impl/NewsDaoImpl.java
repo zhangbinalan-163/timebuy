@@ -62,15 +62,6 @@ public class NewsDaoImpl implements NewsDao{
     }
 
     @Override
-    public void accept(News news) throws TimeBuyException{
-        try {
-            newsMapper.accept(news);
-        }catch (Exception e){
-            throw new TimeBuyException("接收消息异常",e);
-        }
-    }
-
-    @Override
     public List<News> scheduleNews(News news) throws TimeBuyException{
         try {
              return newsMapper.scheduleNews(news);
@@ -121,6 +112,15 @@ public class NewsDaoImpl implements NewsDao{
           newsMapper.praise(news);
         }catch (Exception e){
             throw new TimeBuyException("点赞失败",e);
+        }
+    }
+
+    @Override
+    public void update(News news) throws TimeBuyException{
+        try {
+            newsMapper.update(news);
+        }catch (Exception e){
+            throw new TimeBuyException("修改失败",e);
         }
     }
 }

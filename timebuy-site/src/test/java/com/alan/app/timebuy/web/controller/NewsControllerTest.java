@@ -105,7 +105,8 @@ public class NewsControllerTest {
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/news/accept")
                         .param("acceptUserId", "10")
-                        .param("newsId","9")
+                        .param("newsId", "27")
+                        .param("accepttime","2011-11-11 10:10:10")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();
@@ -162,6 +163,18 @@ public class NewsControllerTest {
     public void welfare() throws Exception {
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/news/welfare")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void delay() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/finish")
+                        .param("newsid","27")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();

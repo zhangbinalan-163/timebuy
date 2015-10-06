@@ -45,11 +45,12 @@ public class CommentControllerTest {
     public void addComment() throws Exception {
 
         MockHttpServletRequestBuilder request =
-                MockMvcRequestBuilders.get("/comment/insert")
+                MockMvcRequestBuilders.get("/comment/publish")
                         .param("newsId", "111")
                         .param("userId", "111")
                         .param("commentTime", "2015-09-02 19:05:42")
-                        .param("comment", "11")
+                        .param("speed", "3")
+                        .param("service","4")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();
