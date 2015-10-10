@@ -52,19 +52,19 @@ public interface NewsService {
      * 所有求助消息
      * @throws SQLException
      */
-    List<News> accompany() throws TimeBuyException;
+    List<News> accompany(News news) throws TimeBuyException;
 
     /**
      * 所有跑腿消息
      * @throws SQLException
      */
-    List<News> run() throws TimeBuyException;
+    List<News> run(News news) throws TimeBuyException;
 
     /**
      * 所有组局消息
      * @throws SQLException
      */
-    List<News> study() throws TimeBuyException;
+    List<News> study(News news) throws TimeBuyException;
 
     /**
      * 所有公益消息
@@ -73,14 +73,38 @@ public interface NewsService {
     List<News> welfare() throws TimeBuyException;
 
     /**
-     * 点赞
+     * 分享
      * @throws SQLException
      */
-    void praise(News news) throws TimeBuyException;
+    void share(News news) throws TimeBuyException;
+
+    /**
+     * 申诉
+     * @throws SQLException
+     */
+    void appeal(News news) throws TimeBuyException;
 
     /**
      * 修改
      * @throws SQLException
      */
     void update(News news) throws TimeBuyException;
+
+    /**
+     * 查询所有在线消息
+     * @throws SQLException
+     */
+    List<News> newsOnline(News news) throws TimeBuyException;
+
+    /**
+     * 查询所有个人在线消息
+     * @throws SQLException
+     */
+    List<News> myNewsOnline(News news) throws TimeBuyException;
+
+    /**
+     * 查询个人不同状态消息
+     * @throws SQLException
+     */
+    List<News> selectNewsTag(News news) throws TimeBuyException;
 }

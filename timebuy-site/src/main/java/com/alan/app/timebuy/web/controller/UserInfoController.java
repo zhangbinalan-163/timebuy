@@ -56,35 +56,6 @@ public class UserInfoController extends BaseController{
     }
 
     /**
-     * 根据QQ获取用户信息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     *//*
-    @RequestMapping(value = "/QQ")
-    @ResponseBody
-    public String userInfoByQQ(HttpServletRequest httpRequest) throws Exception{
-        Request request = getRequest(httpRequest);
-        //获取相关业务参数
-        String QQ = request.getString("QQ");
-        String phone = request.getString("phone");
-
-        if(!StringUtils.isLegalMobile(phone)){
-            throw new InvalidParamException("该手机号不支持");
-        }
-        //执行获取资料
-        User user1 = new User();
-        user1.setUserNameQQ(QQ);
-        User user= userService.getUserByQQ(user1);
-        if(user.getUserId() == null || user.getUserId().equals("")){
-             return createFailResponse(2004,null);
-        }else {
-            user.setPhone(phone);
-            return createSuccessResponse(user);
-        }
-    }*/
-
-    /**
      * 用户信息修改响应方法
      * @param httpRequest
      * @return
@@ -108,9 +79,6 @@ public class UserInfoController extends BaseController{
             fileName = user1.getHeadIcon();
         }else{
             String path = httpRequest.getSession().getServletContext().getRealPath("/")+"upload"+File.separator+fileName;
-            System.out.print("==================================================="+"\n");
-            System.out.print(path+"\n");
-            System.out.print("===================================================");
             File targetFile = new File(path);
             if(!targetFile.exists()){
                 targetFile.mkdirs();
@@ -122,7 +90,6 @@ public class UserInfoController extends BaseController{
                 e.printStackTrace();
             }
         }
-
         //获取相关业务参数
         String nickName = request.getString("nickName");
         String headIcon = fileName;
@@ -130,7 +97,6 @@ public class UserInfoController extends BaseController{
         Date birthDay = DateUtils.StringToDate(request.getString("birthDay"));
         String profession = request.getString("profession");
         String signature = request.getString("signature");
-        String phone = request.getString("phone");
         //取得返回对象
         User user = userService.getUserById(userId);
         if(request.getString("userId") != null){
@@ -140,11 +106,35 @@ public class UserInfoController extends BaseController{
             user.setBirthDay(birthDay);
             user.setProfession(profession);
             user.setSignature(signature);
-            user.setPhone(phone);
             userService.updateUser(user);
             return createSuccessResponse(null);
         }else {
             return createFailResponse(2005,null);
         }
-}
+    }
+
+    /**
+     * 用户钱包加钱
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "wallet")
+    @ResponseBody
+    public String wallet(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取参数
+        float money = request.getFloat("money");
+        long userid = request.getInt("userId");
+        User user = new User();
+        user.setUserId(userid);
+        user.setMoney(money);
+        //执行方法
+        try {
+            userService.updateUser(user);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse("1000",null);
+    }
 }

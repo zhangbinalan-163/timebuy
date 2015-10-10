@@ -18,9 +18,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -71,7 +69,6 @@ public class NewsController extends BaseController{
                 }
             }
         }
-
         Request request = getRequest(httpRequest);
         //获取相关业务参数
         String phone = request.getString("phone");
@@ -126,46 +123,211 @@ public class NewsController extends BaseController{
     }
 
     /**
-     * 查询全部News
+     * 查询全部在线News
      * @param httpRequest
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/all")
+    @RequestMapping(value = "/online")
     @ResponseBody
-    public String allNews(HttpServletRequest httpRequest) throws Exception{
+    public String newsOnline(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
         //获取相关参数
         Date timeNow = DateUtils.StringToDate3(request.getString("timeNow"));
-        int userId = Integer.parseInt(request.getString("userId"));
         double coordx = Float.parseFloat(request.getString("coordx"));
         double coordy = Float.parseFloat(request.getString("coordy"));
 
-        List<News> l = newsService.getNewsAll();
-
-        //对所有消息进行筛选排
+        News news =new News();
+        news.setAccepttime(timeNow);
+        List<News> l = newsService.newsOnline(news);
+        HashMap<Integer, News> m = new HashMap<Integer, News>();
+        //对所有消息进行筛选排序
         for (int i = l.size()-1; i >= 0; i--){
-            double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
-            Date timeEarly = DateUtils.StringToDate3(request.getString("starttime"));
-            long temp = timeNow.getTime() - timeEarly.getTime();//相差秒数
-            if (distance<9000000){
-               l.remove(i);
-            }else if (temp>3600){
-               l.remove(i);
-            }
+            Double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
+            int distanceInt= Integer.parseInt(new java.text.DecimalFormat("0").format(distance));
+            m.put(distanceInt,l.get(i));
         }
-
+        //排序
+        Object[] key =  m.keySet().toArray();
+        Arrays.sort(key);
+        List<News> l2 = new ArrayList<News>();
+        for(int i=0;i<key.length;i++){
+            l2.add(i,m.get(key[i]));
+        }
         // 获得记录数
-        int totalCount = l.size();
+        int totalCount = l2.size();
         int currentPage = Integer.parseInt(request.getString("currentPage"));
         // 设置分页信息
         Page page = PageUtils.createPage(5, totalCount, currentPage);
+        int everyPage = page.getEveryPage();
         //取得该频道下的记录
-        List<News> l2 = new ArrayList<News>();
-        for(int i=0;i<page.getEveryPage();i++){
-            l2.add(i,l.get((currentPage-1)*5+i));
+        if(l2.size()<page.getEveryPage()){
+            everyPage = l2.size();
         }
-        if(l.size()==0){
+        List<News> l3 = new ArrayList<News>();
+        for(int i=0;i<everyPage;i++){
+            l3.add(i,l2.get((currentPage-1)*5+i));
+        }
+        if(l2.size()==0){
+            return createFailResponse(1002,"无消息");
+        }else {
+            return createSuccessResponse(l2);
+        }
+    }
+
+    /**
+     * 查询全部在线陪伴News
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/onlineAccompany")
+    @ResponseBody
+    public String newsOnlineAccompany(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关参数
+        Date timeNow = DateUtils.StringToDate3(request.getString("timeNow"));
+        double coordx = Float.parseFloat(request.getString("coordx"));
+        double coordy = Float.parseFloat(request.getString("coordy"));
+
+        News news =new News();
+        news.setAccepttime(timeNow);
+        List<News> l = newsService.accompany(news);
+        HashMap<Integer, News> m = new HashMap<Integer, News>();
+        //对所有消息进行筛选排序
+        for (int i = l.size()-1; i >= 0; i--){
+            Double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
+            int distanceInt= Integer.parseInt(new java.text.DecimalFormat("0").format(distance));
+            m.put(distanceInt,l.get(i));
+        }
+        //排序
+        Object[] key =  m.keySet().toArray();
+        Arrays.sort(key);
+        List<News> l2 = new ArrayList<News>();
+        for(int i=0;i<key.length;i++){
+            l2.add(i,m.get(key[i]));
+        }
+        // 获得记录数
+        int totalCount = l2.size();
+        int currentPage = Integer.parseInt(request.getString("currentPage"));
+        // 设置分页信息
+        Page page = PageUtils.createPage(5, totalCount, currentPage);
+        int everyPage = page.getEveryPage();
+        //取得该频道下的记录
+        if(l2.size()<page.getEveryPage()){
+            everyPage = l2.size();
+        }
+        List<News> l3 = new ArrayList<News>();
+        for(int i=0;i<everyPage;i++){
+            l3.add(i,l2.get((currentPage-1)*5+i));
+        }
+        if(l2.size()==0){
+            return createFailResponse(1002,"无消息");
+        }else {
+            return createSuccessResponse(l2);
+        }
+    }
+
+    /**
+     * 查询全部在线跑腿News
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/onlineRun")
+    @ResponseBody
+    public String newsOnlineRun(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关参数
+        Date timeNow = DateUtils.StringToDate3(request.getString("timeNow"));
+        double coordx = Float.parseFloat(request.getString("coordx"));
+        double coordy = Float.parseFloat(request.getString("coordy"));
+
+        News news =new News();
+        news.setAccepttime(timeNow);
+        List<News> l = newsService.accompany(news);
+        HashMap<Integer, News> m = new HashMap<Integer, News>();
+        //对所有消息进行筛选排序
+        for (int i = l.size()-1; i >= 0; i--){
+            Double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
+            int distanceInt= Integer.parseInt(new java.text.DecimalFormat("0").format(distance));
+            m.put(distanceInt,l.get(i));
+        }
+        //排序
+        Object[] key =  m.keySet().toArray();
+        Arrays.sort(key);
+        List<News> l2 = new ArrayList<News>();
+        for(int i=0;i<key.length;i++){
+            l2.add(i,m.get(key[i]));
+        }
+        // 获得记录数
+        int totalCount = l2.size();
+        int currentPage = Integer.parseInt(request.getString("currentPage"));
+        // 设置分页信息
+        Page page = PageUtils.createPage(5, totalCount, currentPage);
+        int everyPage = page.getEveryPage();
+        //取得该频道下的记录
+        if(l2.size()<page.getEveryPage()){
+            everyPage = l2.size();
+        }
+        List<News> l3 = new ArrayList<News>();
+        for(int i=0;i<everyPage;i++){
+            l3.add(i,l2.get((currentPage-1)*5+i));
+        }
+        if(l2.size()==0){
+            return createFailResponse(1002,"无消息");
+        }else {
+            return createSuccessResponse(l2);
+        }
+    }
+
+    /**
+     * 查询全部在线学霸News
+     * @param httpRequest
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/onlineStudy")
+    @ResponseBody
+    public String newsOnlineStudy(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        //获取相关参数
+        Date timeNow = DateUtils.StringToDate3(request.getString("timeNow"));
+        double coordx = Float.parseFloat(request.getString("coordx"));
+        double coordy = Float.parseFloat(request.getString("coordy"));
+
+        News news =new News();
+        news.setAccepttime(timeNow);
+        List<News> l = newsService.accompany(news);
+        HashMap<Integer, News> m = new HashMap<Integer, News>();
+        //对所有消息进行筛选排序
+        for (int i = l.size()-1; i >= 0; i--){
+            Double distance = (l.get(i).getCoordx()-coordx)*(l.get(i).getCoordx()-coordx) + (l.get(i).getCoordy()-coordy)*(l.get(i).getCoordy()-coordy);
+            int distanceInt= Integer.parseInt(new java.text.DecimalFormat("0").format(distance));
+            m.put(distanceInt,l.get(i));
+        }
+        //排序
+        Object[] key =  m.keySet().toArray();
+        Arrays.sort(key);
+        List<News> l2 = new ArrayList<News>();
+        for(int i=0;i<key.length;i++){
+            l2.add(i,m.get(key[i]));
+        }
+        // 获得记录数
+        int totalCount = l2.size();
+        int currentPage = Integer.parseInt(request.getString("currentPage"));
+        // 设置分页信息
+        Page page = PageUtils.createPage(5, totalCount, currentPage);
+        int everyPage = page.getEveryPage();
+        //取得该频道下的记录
+        if(l2.size()<page.getEveryPage()){
+            everyPage = l2.size();
+        }
+        List<News> l3 = new ArrayList<News>();
+        for(int i=0;i<everyPage;i++){
+            l3.add(i,l2.get((currentPage-1)*5+i));
+        }
+        if(l2.size()==0){
             return createFailResponse(1002,"无消息");
         }else {
             return createSuccessResponse(l2);
@@ -183,7 +345,7 @@ public class NewsController extends BaseController{
     public String oneNews(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
         //获取相关业务参数
-        int newsId = Integer.parseInt(request.getString("newsId"));
+        int newsId = Integer.parseInt(request.getString("newsid"));
         News n = newsService.selectNewsById(newsId);
         if (n == null){
            return createFailResponse(1002,"消息无内容");
@@ -239,59 +401,6 @@ public class NewsController extends BaseController{
         return createSuccessResponse(l);
     }
 
-    /**
-     * 所有陪伴消息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/help")
-    @ResponseBody
-    public String help(HttpServletRequest httpRequest) throws Exception{
-         Request request = getRequest(httpRequest);
-         List<News> l = newsService.accompany();
-        if(l.size()==0){
-            return createFailResponse(2006,null);
-        }else {
-            return createSuccessResponse(l);
-        }
-    }
-
-    /**
-     * 所有跑腿消息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/run")
-    @ResponseBody
-    public String run(HttpServletRequest httpRequest) throws Exception{
-        Request request = getRequest(httpRequest);
-        List<News> l = newsService.run();
-        if(l.size()==0){
-            return createFailResponse(2006,null);
-        }else {
-            return createSuccessResponse(l);
-        }
-    }
-
-    /**
-     * 所有学霸消息
-     * @param httpRequest
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/group")
-    @ResponseBody
-    public String group(HttpServletRequest httpRequest) throws Exception{
-        Request request = getRequest(httpRequest);
-        List<News> l = newsService.study();
-        if(l.size()==0){
-            return createFailResponse(2006,null);
-        }else {
-            return createSuccessResponse(l);
-        }
-    }
 
     /**
      * 所有公益消息
@@ -374,19 +483,22 @@ public class NewsController extends BaseController{
     }
 
     /**
-     * 申诉
+     * 取消申诉
      * @param httpRequest
      * @return
      * @throw Exception
      */
-    @RequestMapping(value = "/appeal")
+    @RequestMapping(value = "/cancelAppeal")
     @ResponseBody
-    public String appeal(HttpServletRequest httpRequest) throws Exception{
+    public String cancelAppeal(HttpServletRequest httpRequest) throws Exception{
         Request request = getRequest(httpRequest);
         int newsId = request.getInt("newsid");
         News news = new News();
         news.setNewsId(newsId);
-        news.setTag(3);
+        news.setTag(4);
+        if (newsService.selectNewsById(newsId).getTag()!=3){
+            return createFailResponse(1002,"改任务不在申诉中！");
+        }
         try{
             newsService.update(news);
         }catch (Exception e){
@@ -394,4 +506,79 @@ public class NewsController extends BaseController{
         }
         return createSuccessResponse("1000",null);
     }
+
+    /**
+     * 获取某个人的所有在线消息
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/myNewsOnline")
+    @ResponseBody
+    public String myNewsOnline(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int userid = request.getInt("userId");
+        Date timeNow = DateUtils.StringToDate3(request.getString("timeNow"));
+        News news = new News();
+        news.setUserid(userid);
+        news.setAccepttime(timeNow);
+        List<News> l = new ArrayList<News>();
+        try {
+           l = newsService.myNewsOnline(news);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse(l);
+    }
+
+    /**
+     * 获取某个人所有等待中的发布
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/selectPublishWait")
+    @ResponseBody
+    public String selectPublishWait(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int userid = request.getInt("userId");
+        News news = new News();
+        news.setUserid(userid);
+        news.setTag(0);
+        List<News> l = new ArrayList<News>();
+        try {
+            l = newsService.selectNewsTag(news);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse(l);
+    }
+
+    /**
+     * 获取某个人所有等待中的发布
+     * @param httpRequest
+     * @return
+     * @throw Exception
+     */
+    @RequestMapping(value = "/selectPublishTag")
+    @ResponseBody
+    public String selectPublishTag(HttpServletRequest httpRequest) throws Exception{
+        Request request = getRequest(httpRequest);
+        int userid = request.getInt("userId");
+        int tag = request.getInt("tag");
+        if(tag!=0 || tag!=1 || tag!=2 || tag!=3 || tag!=4 || tag!=5){
+             return createFailResponse(1002,"传入参数tag不符合要求！");
+        }
+        News news = new News();
+        news.setUserid(userid);
+        news.setTag(tag);
+        List<News> l = new ArrayList<News>();
+        try {
+            l = newsService.selectNewsTag(news);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return createSuccessResponse(l);
+    }
+
 }

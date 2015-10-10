@@ -174,7 +174,64 @@ public class NewsControllerTest {
     public void delay() throws Exception {
         MockHttpServletRequestBuilder request =
                 MockMvcRequestBuilders.get("/news/finish")
-                        .param("newsid","27")
+                        .param("newsid", "27")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void newsOnline() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/online")
+                        .param("timeNow", "2015-10-09 19:42:28")
+                        .param("coordx", "1")
+                        .param("coordy", "1")
+                        .param("currentPage","1")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void myNewsOnline() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/news/myNewsOnline")
+                        .param("timeNow", "2015-10-09 19:42:28")
+                        .param("userId","1")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void Share() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/share/info")
+                        .param("shareTime", "2015-10-09 19:42:28")
+                        .param("newsId", "27")
+                        .param("userId", "21")
+                        .param("content", "success")
+                        .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
+        MvcResult result = mockMvc.perform(request)
+                .andReturn();
+        String resultContent=result.getResponse().getContentAsString();
+        logger.info(resultContent);
+    }
+
+    @Test
+    public void Appeal() throws Exception {
+        MockHttpServletRequestBuilder request =
+                MockMvcRequestBuilders.get("/appeal/info")
+                        .param("appealTime", "2015-10-09 19:42:28")
+                        .param("newsId", "27")
+                        .param("content", "success")
                         .header("x-timebuy-sid", "d6089681f79c7627bbac829307e041a7");
         MvcResult result = mockMvc.perform(request)
                 .andReturn();

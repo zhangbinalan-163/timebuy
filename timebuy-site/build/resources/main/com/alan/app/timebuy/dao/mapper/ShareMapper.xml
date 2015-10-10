@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alan.app.timebuy.dao.mapper.ShareMapper">
+
+    <sql id="TABLE">d_timebuy_share</sql>
+
+    <resultMap id="DATA" type="com.alan.app.timebuy.entity.Share">
+        <id property="shareId" column="share_id"/>
+        <result property="shareTime" column="share_time"/>
+        <result property="content" column="content"/>
+        <result property="newsId" column="news_id"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.alan.app.timebuy.entity.Share" useGeneratedKeys="true" keyColumn="id" keyProperty="shareId">
+        INSERT INTO <include refid="TABLE"/>
+        (share_time,content,news_id,user_id)
+        VALUES(#{shareTime},#{content},#{newsId},#{userId})
+    </insert>
+</mapper>

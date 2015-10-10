@@ -16,6 +16,7 @@ import javax.jws.soap.SOAPBinding;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 /**
@@ -34,6 +35,7 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests {
         try {
             User userInfo = userService.getUserByPhone("18069812067");
             logger.info(StringUtils.toJsonString(userInfo));
+//            assertEquals("123",);
         } catch (Exception e) {
             logger.error("fail",e);
             fail();

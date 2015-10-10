@@ -75,24 +75,24 @@ public class NewsServiceImpl implements NewsService{
      * 所有求助消息
      * @throws TimeBuyException
      */
-    public List<News> accompany() throws TimeBuyException{
-        return newsDao.accompany();
+    public List<News> accompany(News news) throws TimeBuyException{
+        return newsDao.accompany(news);
     }
 
     /**
      * 所有跑腿消息
      * @throws TimeBuyException
      */
-    public List<News> run() throws TimeBuyException{
-        return newsDao.run();
+    public List<News> run(News news) throws TimeBuyException{
+        return newsDao.run(news);
     }
 
     /**
      * 所有组局消息
      * @throws TimeBuyException
      */
-    public List<News> study() throws TimeBuyException{
-        return newsDao.study();
+    public List<News> study(News news) throws TimeBuyException{
+        return newsDao.study(news);
     }
 
     /**
@@ -104,12 +104,20 @@ public class NewsServiceImpl implements NewsService{
     }
 
     /**
-     * 点赞
+     * 分享
      * @throws TimeBuyException
      */
-     public void praise(News news) throws TimeBuyException{
-        newsDao.praise(news);
+     public void share(News news) throws TimeBuyException{
+        newsDao.share(news);
      }
+
+    /**
+     * 申诉
+     * @throws TimeBuyException
+     */
+    public void appeal(News news) throws TimeBuyException{
+        newsDao.appeal(news);
+    }
 
     /**
      * 修改消息
@@ -117,6 +125,30 @@ public class NewsServiceImpl implements NewsService{
      */
     public void update(News news) throws TimeBuyException{
         newsDao.update(news);
+    }
+
+    /**
+     * 所有在线消息
+     * @throws TimeBuyException
+     */
+    public List<News> newsOnline(News news) throws TimeBuyException{
+        return newsDao.newsOnline(news);
+    }
+
+    /**
+     * 所有个人在线消息
+     * @throws TimeBuyException
+     */
+    public List<News> myNewsOnline(News news) throws TimeBuyException{
+        return newsDao.myNewsOnline(news);
+    }
+
+    /**
+     * 查询个人不同状态消息
+     * @throws TimeBuyException
+     */
+    public List<News> selectNewsTag(News news) throws TimeBuyException{
+        return newsDao.selectNewsTag(news);
     }
 
 }

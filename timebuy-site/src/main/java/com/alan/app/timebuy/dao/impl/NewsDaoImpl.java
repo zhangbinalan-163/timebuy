@@ -71,27 +71,27 @@ public class NewsDaoImpl implements NewsDao{
     }
 
     @Override
-    public List<News> accompany() throws TimeBuyException{
+    public List<News> accompany(News news) throws TimeBuyException{
         try {
-            return newsMapper.accompany();
+            return newsMapper.accompany(news);
         }catch (Exception e){
             throw new TimeBuyException("获取求助信息失败",e);
         }
     }
 
     @Override
-    public List<News> run() throws TimeBuyException{
+    public List<News> run(News news) throws TimeBuyException{
         try {
-          return newsMapper.run();
+          return newsMapper.run(news);
         }catch (Exception e){
             throw new TimeBuyException("获取跑腿信息失败",e);
         }
     }
 
     @Override
-    public List<News> study() throws TimeBuyException{
+    public List<News> study(News news) throws TimeBuyException{
         try {
-            return newsMapper.study();
+            return newsMapper.study(news);
         }catch (Exception e){
             throw new TimeBuyException("获取组局信息失败",e);
         }
@@ -107,9 +107,18 @@ public class NewsDaoImpl implements NewsDao{
     }
 
     @Override
-    public void praise(News news) throws TimeBuyException{
+    public void share(News news) throws TimeBuyException{
         try {
-          newsMapper.praise(news);
+          newsMapper.share(news);
+        }catch (Exception e){
+            throw new TimeBuyException("点赞失败",e);
+        }
+    }
+
+    @Override
+    public void appeal(News news) throws TimeBuyException{
+        try {
+            newsMapper.appeal(news);
         }catch (Exception e){
             throw new TimeBuyException("点赞失败",e);
         }
@@ -121,6 +130,33 @@ public class NewsDaoImpl implements NewsDao{
             newsMapper.update(news);
         }catch (Exception e){
             throw new TimeBuyException("修改失败",e);
+        }
+    }
+
+    @Override
+    public List<News> newsOnline(News news) throws TimeBuyException{
+        try {
+            return newsMapper.newsOnline(news);
+        }catch (Exception e){
+            throw new TimeBuyException("获取公益信息失败",e);
+        }
+    }
+
+    @Override
+    public List<News> myNewsOnline(News news) throws TimeBuyException{
+        try {
+            return newsMapper.myNewsOnline(news);
+        }catch (Exception e){
+            throw new TimeBuyException("获取公益信息失败",e);
+        }
+    }
+
+    @Override
+    public List<News> selectNewsTag(News news) throws TimeBuyException{
+        try {
+            return newsMapper.selectNewsTag(news);
+        }catch (Exception e){
+            throw new TimeBuyException("获取公益信息失败",e);
         }
     }
 }

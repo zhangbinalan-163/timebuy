@@ -155,10 +155,14 @@ public class RegisterController extends BaseController{
         }
         //检查该用户是否已经存在
         User oldUser = userService.getUserByPhone(phone);
+        long userId = 0;
         if(oldUser!=null){
+            //之前用手机注册过
             if(oldUser.getSource()==1){
                 oldUser.setSource(source);
-            }else if(oldUser.getSource()!=source){
+            }
+            //之前第三方与这次第三方不符
+            else if(oldUser.getSource()!=source){
                 return createFailResponse(2002,null);
             }
             return createSuccessResponse(oldUser);
@@ -170,9 +174,10 @@ public class RegisterController extends BaseController{
             user.setUserName(userName);
             user.setSource(source);
             registerService.registerUser(user);
+            userId = user.getUserId();
         }
         //生成响应信息
-        return createSuccessResponse(null);
+        return createSuccessResponse(String.valueOf(userId),null);
     }
 
     /**
@@ -223,6 +228,7 @@ public class RegisterController extends BaseController{
         }
         //检查该用户是否已经存在
         User oldUser = userService.getUserByPhone(phone);
+        long userId = 0;
         if(oldUser!=null){
             return createSuccessResponse(oldUser);
         }else {
@@ -231,8 +237,9 @@ public class RegisterController extends BaseController{
             user.setPhone(phone);
             user.setSource(1);
             registerService.registerUser(user);
+            userId = user.getUserId();
         }
         //生成响应信息
-        return createSuccessResponse(null);
+        return createSuccessResponse(String.valueOf(userId),null);
     }
 }

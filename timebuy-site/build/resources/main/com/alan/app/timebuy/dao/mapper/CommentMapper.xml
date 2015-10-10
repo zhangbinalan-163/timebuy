@@ -13,12 +13,13 @@
         <result property="commentTime" column="comment_time"/>
         <result property="speed" column="speed"/>
         <result property="service" column="service"/>
+        <result property="doId" column="do_id"/>
     </resultMap>
 
     <insert id="insert" parameterType="com.alan.app.timebuy.entity.Comment" useGeneratedKeys="true" keyColumn="id" keyProperty="commentId">
         INSERT INTO <include refid="TABLE"/>
-        (comment_id,news_id,user_id,comment_time,speed,service)
-        VALUES(#{commentId},#{newsId},#{userId},#{commentTime},#{speed},#{service})
+        (comment_id,news_id,user_id,comment_time,speed,service,do_id)
+        VALUES(#{commentId},#{newsId},#{userId},#{commentTime},#{speed},#{service},#{doId})
     </insert>
 
     <select id="getCommentByNews" parameterType="com.alan.app.timebuy.entity.Comment" resultMap="DATA">

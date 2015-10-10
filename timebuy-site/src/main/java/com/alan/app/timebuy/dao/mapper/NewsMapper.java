@@ -51,19 +51,19 @@ public interface NewsMapper {
      * 所有求助消息
      * @throws SQLException
      */
-    List<News> accompany() throws Exception;
+    List<News> accompany(News news) throws Exception;
 
     /**
      * 所有跑腿消息
      * @throws SQLException
      */
-    List<News> run() throws Exception;
+    List<News> run(News news) throws Exception;
 
     /**
      * 所有组局消息
      * @throws SQLException
      */
-    List<News> study() throws Exception;
+    List<News> study(News news) throws Exception;
 
     /**
      * 所有公益消息
@@ -72,14 +72,40 @@ public interface NewsMapper {
     List<News> welfare() throws Exception;
 
     /**
-     * 点赞
+     * 分享
      * @throws SQLException
      */
-    void praise(News news) throws Exception;
+    void share(News news) throws Exception;
+
+    /**
+     * 申诉
+     * @throws SQLException
+     */
+    void appeal(News news) throws Exception;
 
     /**
      * 修改
      * @throws SQLException
      */
     void update(News news) throws Exception;
+
+    /**
+     * 查询所有在线消息
+     * @throws SQLException
+     */
+    List<News> newsOnline(News news) throws Exception;
+
+    /**
+     * 查询个人所有在线消息
+     * @throws SQLException
+     */
+    List<News> myNewsOnline(News news) throws Exception;
+
+    /**
+     * 查询个人不同状态消息
+     * @throws SQLException
+     */
+    List<News> selectNewsTag(News news) throws Exception;
+
+
 }

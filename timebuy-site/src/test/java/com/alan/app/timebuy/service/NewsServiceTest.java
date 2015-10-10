@@ -65,20 +65,6 @@ public class NewsServiceTest extends AbstractJUnit4SpringContextTests {
     }
 
 
-
-    @Test
-    public void run(){
-        try {
-            List<News> l = newsService.run();
-            System.out.print("======================================="+"\n");
-            System.out.print(l.size()+"\n");
-            System.out.print("======================================="+"\n");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-
     @Test
     public void welfare(){
         try {
@@ -92,13 +78,14 @@ public class NewsServiceTest extends AbstractJUnit4SpringContextTests {
     }
 
     @Test
-    public void praise(){
+    public void newsOnline(){
         try {
-            News n1 = new News();
-            n1.setNewsId(1);
-            int a = newsService.selectNewsById(1).getPraise();
-            n1.setPraise(a+1);
-          newsService.praise(n1);
+            News news = new News();
+            news.setAccepttime(DateUtils.StringToDate3("2010-01-010 12:12:00"));
+            List<News> l = newsService.newsOnline(news);
+            System.out.print("======================================="+"\n");
+            System.out.print(l.size() + "\n");
+            System.out.print("=======================================" + "\n");
         }catch (Exception e){
             e.printStackTrace();
         }
